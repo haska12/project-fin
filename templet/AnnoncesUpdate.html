@@ -1,0 +1,37 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+<title>home</title>
+<style> 
+  tr,th ,td{
+padding: 20px;
+border: 2px black solid;
+  }</style>
+{% endblock %}
+
+
+
+{% block userinfo %}
+Annonces
+<button><a href="{% url 'Annonces_uplod' %} ">Annonces</a></button>
+<table>
+    <tr>
+      <th> Annonces</th>
+      <th>post date</th>
+      <th>updated date</th>
+      <th>update</th>
+      <th>delete</th>
+    </tr>
+{% for x in Annonces %}
+<tr>
+    <td><a href="{% url 'Annonce_uplod' x.name %}">{{x.name}}</a></td>
+    <td> {{x.postdate}}</td>
+    <td>{{x.updated}}</td>
+    <td><button><a href="{% url 'Annonces_update_views' x.name %}">update</a></button></td>
+    <td><button ><a href="{% url 'Annonce_delete' x.name %}">delete</a></button></td>
+</tr>
+{% endfor %}
+
+
+</table>
+{% endblock %}

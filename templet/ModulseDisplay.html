@@ -1,0 +1,102 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+<title>home</title>
+<style>
+            table, th, td {
+          border:1px solid black;
+          margin: 10px;
+          padding: 20px;
+        }
+        
+/* Create three equal columns that floats next to each other */
+.column {
+  
+  float: left;
+  width: 15%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+ 
+ 
+
+}
+/** background-color: rgba(255,255,255,0.13);
+  border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);/
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+{% endblock %}
+
+
+
+{% block userinfo %}
+<div class="row">
+  <div class="column" >
+    <table border='1'>
+      <tr>
+          <th>Examens</th>
+          <th>link</th>
+      </tr>
+          {% for x in Examens %}
+      {% if x.module.modulenom == form.modulenom  %}
+                <tr>
+                  <td>{{ x.name }}</td>
+                    <td><a href=" {% url 'Examendisplay'  x.id %} " target="_blank">afficher</a></td>
+                   
+                </tr>
+      
+                {% endif %}
+              {% endfor %}
+      </table>
+  </div>
+  <div class="column">
+      
+    <table border='1'>
+
+      <tr>
+          <th>cours</th>
+          <th>link</th>
+      </tr>
+      {% for x in cours %}
+      {% if x.module.modulenom == form.modulenom  %}
+      <tr>
+          <td>{{ x.name }}</td>
+          <td><a href="{% url 'Courdisplay'  x.id %}"target="_blank">afficher</a></td>
+        
+      </tr>
+      {% endif %}
+    {% endfor %}
+     </table>
+  </div>
+  <div class="column" >
+    <table border='1'>
+      <tr>
+          <th>Serie</th>
+          <th>link</th>
+      </tr>
+      {% for x in mambre %}
+    {% if x.module.modulenom == form.modulenom  %}
+        <tr>
+          <td>{{ x.name }}</td>
+            <td><a href=" {% url 'Seriesdisplay'  x.id %} " target="_blank">afficher</a></td>
+          
+        </tr>
+        {% endif %}
+      {% endfor %}
+
+    </table>
+  </div>
+</div>
+
+   
+      
+     
+{% endblock %}

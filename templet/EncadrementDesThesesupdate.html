@@ -1,0 +1,39 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+<title>home</title>
+<style>
+.btnSubmit:active{
+    box-shadow: 0 3px gray;
+    transform: translateY(3px);
+} 
+  tr,th ,td{
+padding: 20px;
+border: 2px black solid;
+  }</style>
+{% endblock %}
+
+
+
+{% block userinfo %}
+
+<button><a href="{% url 'These_uplod_views' %}">add Doctorant</a></button>
+<table>
+    <tr>
+      <th> Doctorant</th>
+      <th>Sujet de thèse  </th>
+      <th>année  d’inscription</th>
+
+    </tr>
+{% for x in Theses %}
+<tr>
+    <td>{{x.Doctorant}}</td>
+    <td> {{x.Sujet}}</td>
+    <td>{{x.AnneeInscription}}</td>
+    <td ><a href="{%url 'These_delete_views' x.id%}" >delete</a></td>
+    
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}
