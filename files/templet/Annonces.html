@@ -1,0 +1,47 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+<title>Annonces</title>
+<style> 
+
+
+
+td {
+  color: black;
+      }
+      
+      
+    
+      
+      </style>
+{% endblock %}
+
+
+
+{% block userinfo %}
+
+
+  <table class="table table-striped  ">
+    <thead class="thead-dark">
+      <tr style="background-color: black; color: white;">
+        <th scope="col"> Annonces</th>
+        <th scope="col">post date</th>
+        <th scope="col">updated date</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for x in Annonces %}
+<tr>
+    <td scope="row"><a href="{% url 'Annonce_uplod' x.name %}">{{x.name}}</a></td>
+    <td scope="row">{{x.postdate|date:"D ,d M ,Y "}}</td>
+    <td scope="row">{{x.updated|date:"D ,d M ,Y "}}</td>
+</tr>
+
+{% endfor %}
+    </tbody> 
+
+</table>
+
+
+{% endblock %}

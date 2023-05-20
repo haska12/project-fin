@@ -1,0 +1,36 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+<title>home</title>
+<style> 
+  tr,th ,td{
+padding: 20px;
+border: 2px black solid;
+  }</style>
+{% endblock %}
+
+
+
+{% block userinfo %}
+
+
+<table>
+    <tr>
+      <th> name</th>
+      <th>Sujets des PFE  Master Big Data et Clouad Computing  </th>
+      <th>Annee </th>
+
+    </tr>
+{% for x in MAaster %}
+
+<tr>
+    <td><a href="#">{{x.name}}</a></td>
+    <td> {{x.SujetsDesPFE}}</td>
+    <td>{{x.AnneeInscription}}</td>
+   
+    
+</tr>
+
+{% endfor %}
+</table>
+{% endblock %}

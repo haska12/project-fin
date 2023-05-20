@@ -1,0 +1,38 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+<title>home</title>
+<style>
+.btnSubmit:active{
+    box-shadow: 0 3px gray;
+    transform: translateY(3px);
+} 
+  tr,th ,td{
+padding: 20px;
+border: 2px black solid;
+  }</style>
+{% endblock %}
+
+
+
+{% block userinfo %}
+
+<button><a href="{% url 'MAaster_upload_views' %}">add Etudiants</a></button>
+<table>
+    <tr>
+        <th> name</th>
+      <th>Sujets des PFE  Master Big Data et Clouad Computing  </th>
+      <th>Annee </th>
+    </tr>
+{% for x in MAaster %}
+<tr>
+    <td><a href="#">{{x.name}}</a></td>
+    <td> {{x.SujetsDesPFE}}</td>
+    <td>{{x.AnneeInscription}}</td>
+    <td ><a href="{% url 'MAaster_delete_views' x.id%}" >delete</a></td>
+    
+</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

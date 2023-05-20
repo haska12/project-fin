@@ -1,0 +1,188 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+<title>home</title>
+<style>
+      body{
+     
+ 
+        
+  font-family: Arial;
+  
+  
+    }
+  
+    #table{
+      margin-left: 100px;
+      position: relative;
+
+
+    
+    }
+    tr,th {
+padding: 20px;
+    }
+  #userenfas{
+    
+    font-size: medium; 
+      font-family:Arial, Helvetica, sans-serif;
+       color: #ffffff; 
+      
+    width: 40%;
+    height: 60%;
+    background-color: rgba(255,255,255,0.13);
+    position: relative;
+    
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 19px ;
+  }
+  button{
+    text-decoration: none;
+    background-color: rgb(255, 255, 255);
+      
+    padding: 4px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border: black 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+
+  }
+  a:hover{
+    color: white;
+  }
+
+button:active{
+    box-shadow: 0 3px gray;
+    transform: translateY(3px);
+}
+ /**/
+ .container{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.bubbles{
+    position: absolute;
+    display: flex;
+}
+
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: aqua;
+    margin: 0 40px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+     0 0 50px #4fc3dc , 0 0 0 10px #4fc3dc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(100s/var(--i));
+    }
+.bubbles span:nth-child(even){
+    background: rgb(255, 0, 119);
+    box-shadow: 0 0 0 10px #4fc3dc44,
+    0 0 50px rgb(255, 0, 119) , 0 0 0 10px rgb(255, 0, 119);
+}
+
+
+    @keyframes animate {
+       0%{
+        transform: translateY(100vh) scale(0);
+       } 
+       100%{
+        transform: translateY(-0vh) scale(1);
+       } 
+    }
+
+    /*******/
+    .container {
+  display: flex;
+/*   border:1px solid red; */
+  height: 100%;
+  align-items: center;
+  position: absolute;
+}
+
+svg {
+    display: block;
+    font: 10.5em 'Montserrat';
+    width: 960px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+  stroke: #4D163D;
+  animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+  stroke: #840037;
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+  stroke: #BD0034;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+  stroke: #BD0034;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+  stroke: #FDB731;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+  100% {stroke-dashoffset: -35%;}
+}
+</style>
+{% endblock %}
+
+
+
+{% block userinfo %}
+
+
+<div id="userenfas">
+  <button  style="  margin-left: 100px; width: 60%;"><a style="text-decoration: none; color: #000;" href="{% url 'Modules_upload' %}"> new module </a></button>
+  <table id="table">
+    <tr>
+      <th> module mame</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+    {% for x in modules %}
+            <tr>
+            
+                <td><a style="text-decoration: none; color: #ffffff;"href="{% url 'Modules_despay_views' x.modulenom  %}">{{ x.modulenom }} </a></td>
+                <td><button style="width: 90px;"><a style="text-decoration: none; color: #000;" href="{% url 'Modules_update_views' x.modulenom %}"> Update</button></td>
+               
+                 <td><button style="width: 90px;"><a style="text-decoration: none; color: #000;" href="{% url 'Modules_delete_views' x.modulenom %}"> delete              </button></td>
+  
+            </tr>
+          {% endfor %}
+        </table>
+</div>
+
+{% endblock %}

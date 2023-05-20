@@ -1,0 +1,35 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+<title>home</title>
+<style> 
+  tr,th ,td{
+padding: 20px;
+border: 2px black solid;
+  }</style>
+{% endblock %}
+
+
+
+{% block userinfo %}
+
+
+
+<table>
+    <tr>
+      <th> Sujet de PFE de la Licence</th>
+      <th>Etudiants concernés  </th>
+      <th>Filière</th>
+
+    </tr>
+{% for x in Licence %}
+<tr>
+    <td><a href="#">{{x.SujetsDesPFE}}</a></td>
+    
+    <td> {{x.EtudiantsConcernes}}</td>
+   <td>{{x.Filiere}}</td>
+    
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

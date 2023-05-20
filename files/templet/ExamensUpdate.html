@@ -1,0 +1,23 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+<title>Upload</title>
+
+{% endblock %}
+
+
+
+{% block userinfo %}
+<td><button><a href="{% url 'ExamensUpload'   %}">New Examens</a></button></td>
+
+{% for x in Examens %}
+          <li>
+            
+              <td><a href=" {% url 'Seriesdisplay'  x.id %} ">{{ x.name }}</a></td>
+              <td><button><a href="{% url 'Examen_Update' x.id %}">Update</a></button></td>
+              <td><button><a href="{% url 'Examen_Delete' x.id %}">delete</a></button></td>
+          </li>
+        {% endfor %}
+
+<!-- <p><a href="{% url 'home' %}">Return to home</a></p>-->
+{% endblock %}
