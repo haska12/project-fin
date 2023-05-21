@@ -14,6 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+
+
 from django.urls import path
 from members.views import home_page,login_views,signup_views,logout_User,Series_Upload_views
 from members.views import Cours_Upload_views,Examens_Upload_views,Serie_display_views,Cour_display_views,Examen_display_views,Modules_views
@@ -42,7 +44,10 @@ urlpatterns = [
     path('logout/',logout_User,name='logoutUser'),
      path('forget_password/',forget_password_veiws,name='forget_password'),
       path('rest_password/<str:token>/<str:pk>/',rest_password_veiws,name='rest_password_veiws'),
+
    path('logo_img_pdf_view/',logo_img_pdf_view,name='logo_img_pdf_view'),
+      path('img_pdf_view/', img_pdf_view, name='img_pdf_view'),
+      
 path('chat_bot_wiews/',chat_bot_wiews,name='chat_bot_wiews'),
 
     path('Series_Upload/',Series_Upload_views,name='SeriesUpload'),
@@ -54,7 +59,7 @@ path('chat_bot_wiews/',chat_bot_wiews,name='chat_bot_wiews'),
     path('pdf_serie/<str:pk>/', serie_pdf_view, name='serie_pdf_view'),
     path('pdf_cour/<str:pk>/', cour_pdf_view, name='cour_pdf_view'),
     path('pdf_Examen/<str:pk>/', Examen_pdf_view, name='Examen_pdf_view'),
-    path('img_pdf_view/', img_pdf_view, name='img_pdf_view'),
+ 
     path('Series_Update_views/',Series_Update_views,name='Series_Update'),
      path('cours_Update_views/',cours_Update_views,name='cour_Update'),
       path('Examens_Update_views/',Examens_Update_views,name='Examens_Update'),

@@ -1,7 +1,7 @@
 {% extends 'navbar.html' %}
 
 {% block title %}
-<link rel="stylesheet" href="./css/home.css">
+<link rel="stylesheet" href="C:\Users\yasser\Documents\GitHub\project-fin\templet\css\home.css">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -61,8 +61,9 @@
     color: var(--white);
     margin-top: -7rem;
   }
-  .hero .right h6 {
+  .hero .right #Bonjour {
     font-size: 1.6rem;
+    font-size: 24px;
     color: var(--primary);
     margin-bottom: 0.5rem;
   }
@@ -195,6 +196,7 @@
     justify-content: right;
   }
   .btn {
+    width: 100px;
     padding: 0.6rem 2rem;
     font-size: 1rem;
     font-weight: 600;
@@ -212,7 +214,7 @@
   .btn-primary:hover {
     background: transparent;
     border-color: var(--primary);
-    color: var(--primary);
+    color: black;
   }
   .flex-1 {
     flex: 1;
@@ -221,11 +223,22 @@
     background: transparent;
     color: var(--primary);
     border-color: var(--primary);
+    
   }
-  .btn-secondary:hover {
+  .btn a{
+    color: var(--textbtncolor);
+  
+  }
+
+  .btn-secondary:hover  {
     background: var(--primary);
     color: var(--secondary);
+    --textbtncolor:var(--secondary);
+
+    
   }
+
+  
 </style>
 {% endblock %}
 
@@ -233,29 +246,31 @@
 
 {% block userinfo %}
 
-<header>
+  
+<header id="userin">
     
-    
-    <div class="hero flex items-centre justify-between">
-        <div class="left flex-1 justify-center">
-            <img src="{% url 'img_pdf_view'  %}" />
-        </div>
-        <div class="right flex-1">
-            <h6>Bonjour,Je suis Said Tkatek</h6>
-            
-                <h3>
-                <span>
-                    <p>Je suis <br>
-                        Enseignant Chercheur en Informatique <br>
-                        Département d’informatique, <br>
-                        Faculté des sciences <br>
-                        Université Ibn Tofail de Kénitra <br></p>
-                       
-                </span>
-            </h3>
-        
-            <div><button class="btn btn-secondary"><a href="{% url 'CV' %}">Lire CV</a></button></div>
-        </div>
-    </div>
+  <div class="hero flex items-centre justify-between">
+      <div class="left flex-1 justify-center">
+          <img src="{% url 'img_pdf_view'  %}" />
+      </div>
+      <div class="right flex-1">
+          <h1 id="Bonjour"  style="    font-size: 24px; font-weight: bold;">Bonjour,Je suis Said Tkatek</h1>
+          
+              <h3 id="desc">
+              <span >
+                  <p style="color: var(--white); ">Je suis <br>
+                      Enseignant Chercheur en Informatique <br>
+                      Département d’informatique, <br>
+                      Faculté des sciences <br>
+                      Université Ibn Tofail de Kénitra <br></p>
+                     
+              </span>
+          </h3>
+      
+          <div>
+            <button class="btn btn-secondary"><a href="{% url 'CV' %}" style="text-decoration: none;     font-size: 15px;">Lire CV</a></button></div>
+      </div>
+  </div>
 </header>
+
 {% endblock %}

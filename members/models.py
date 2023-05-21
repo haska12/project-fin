@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import Group, Permission,User
 import django.contrib.auth.models
 from django.utils import timezone
-import datetime
+
 
 # Create your models here.
 try:

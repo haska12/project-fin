@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
 from django.http import FileResponse
-from django.http import HttpResponse
+from django.http import HttpResponse,Http404
 from .decorators import unauthenticated_user,allowed_users
 from .helps import send_forget_password
 import os
@@ -366,7 +366,7 @@ def Examen_display_views(request,pk):
 def img_pdf_view(request):
     # Path to the PDF file
 
-    pdf_path = "templet\img\said_tkatek.png"
+    pdf_path = "templet\static\stkat.png"
     # Read the PDF file
     with open(pdf_path, 'rb') as f:
         pdf = f.read()
@@ -376,9 +376,7 @@ def img_pdf_view(request):
     return response
 def logo_img_pdf_view(request):
     # Path to the PDF file
-
-    pdf_path = f'templet\img\logo.png'
-
+    pdf_path = "templet\static\logo1.png"
     # Read the PDF file
     with open(pdf_path, 'rb') as f:
         pdf = f.read()
@@ -386,6 +384,8 @@ def logo_img_pdf_view(request):
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = 'inline; filename="file.pdf"'
     return response
+    
+    
 @login_required(login_url="login")
 def Modules_views(request):
     form= ModulesForm()
