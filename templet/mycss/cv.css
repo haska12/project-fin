@@ -1,0 +1,94 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+   
+  }
+  body .page-content {
+    width: 100%;
+    height: 100%;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+  }
+  body .page-content section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  
+  
+    scroll-snap-align: start;
+  }
+  
+  /*************** Ce-que-je-fais  **************/
+  #Ce-que-je-fais{
+    width: 100%;
+  height: 100%;
+  }
+  #Ce-que-je-fais-comtent{
+  display: grid;
+  grid-template-columns: auto auto auto ;
+  padding: 19px;
+  }
+  .windo{
+  height:300px ;width: 300px;
+  
+  background-color: rgba(255,255,255,0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  padding: 50px 35px;
+  }
+  #App-Development{
+  
+  padding-bottom: 20px ;
+  }
+  
+  
+  
+  #COMPETENCES-INFORMATIQUES  {
+    display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  padding: 4px;
+  
+  }
+  .grid-item  {
+  margin: 10px;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  
+   width: 70px;
+  font-size: small;
+  text-align: center;
+  border: 1px solid var(--primary);
+  border-radius: 3px;
+  }
+  #about-me-text{
+  
+  padding-left: 50px;
+  
+  }
+  
+  .btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+  
+  }
+  .btn a{
+  color: var(--textbtncolor);
+  
+  }
+  
+  .btn-secondary:hover  {
+  background: var(--primary);
+  color: var(--secondary);
+  --textbtncolor:var(--secondary);
+  
+  
+  }
+  /*# sourceMappingURL=cv.css.map */

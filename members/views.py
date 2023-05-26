@@ -384,6 +384,18 @@ def logo_img_pdf_view(request):
     response = HttpResponse(pdf, content_type='application/pdf')
     response['Content-Disposition'] = 'inline; filename="file.pdf"'
     return response
+
+def img_pdf_view_all(request):
+    # Path to the PDF file
+  
+    pdf_path = "templet\static\img1.jpg"
+    # Read the PDF file
+    with open(pdf_path, 'rb') as f:
+        pdf = f.read()
+    # Create a HttpResponse object with the PDF content
+    response = HttpResponse(pdf, content_type='application/pdf')
+    response['Content-Disposition'] = 'inline; filename="file.pdf"'
+    return response
     
     
 @login_required(login_url="login")
