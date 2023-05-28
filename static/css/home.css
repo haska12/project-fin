@@ -1,11 +1,4 @@
-:root {
-    --primary: rgb(29, 221, 189);
-    --bgDark: rgb(12, 12, 12);
-    --white: rgb(250, 250, 250);
-    --secondary: rgb(0, 59, 50);
-    --bgLight: rgb(190, 181, 181);
-  }
-  
+ 
   * {
     padding: 0;
     margin: 0;
@@ -13,7 +6,7 @@
     -webkit-font-smoothing: antialiased;
   }
   header {
-    background-color: var(--bgDark);
+   
     clip-path: polygon(0 0, 100% 0, 100% 100%, 73% 94%, 0 100%);
   }
   header nav .left a {
@@ -54,8 +47,9 @@
     color: var(--white);
     margin-top: -7rem;
   }
-  .hero .right h6 {
+  .hero .right #Bonjour {
     font-size: 1.6rem;
+    font-size: 24px;
     color: var(--primary);
     margin-bottom: 0.5rem;
   }
@@ -130,6 +124,7 @@
   }
   .card img {
     width: 50px;
+   
     background: white;
   }
   section.services .card-grid {
@@ -187,6 +182,7 @@
     justify-content: right;
   }
   .btn {
+    width: 100px;
     padding: 0.6rem 2rem;
     font-size: 1rem;
     font-weight: 600;
@@ -204,7 +200,7 @@
   .btn-primary:hover {
     background: transparent;
     border-color: var(--primary);
-    color: var(--primary);
+    color: black;
   }
   .flex-1 {
     flex: 1;
@@ -213,8 +209,17 @@
     background: transparent;
     color: var(--primary);
     border-color: var(--primary);
+    
   }
-  .btn-secondary:hover {
+  .btn a{
+    color: var(--textbtncolor);
+  
+  }
+
+  .btn-secondary:hover  {
     background: var(--primary);
     color: var(--secondary);
+    --textbtncolor:var(--secondary);
+
+    
   }

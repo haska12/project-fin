@@ -1,0 +1,122 @@
+:root {
+    --primary: rgb(29, 221, 189);
+    --bgDark: rgb(12, 12, 12);
+    --white: rgb(250, 250, 250);
+    --secondary: rgb(0, 59, 50);
+    --bgLight: rgb(190, 181, 181);
+    --textbtncolor:rgb(29, 221, 189)
+  }
+  body.dark {
+	background: #dbe1e2 url("https://www.toptal.com/designers/subtlepatterns/patterns/sports.png") fixed;
+  color: black;
+  --primary: rgb(10, 10, 10);
+  --white:rgb(46, 26, 26);
+  --secondary: white;
+  --textbtncolor:black;
+  
+}
+*, *::before, *::after {
+	 position: relative;
+	 box-sizing: border-box;
+}
+ html, body {
+	 width: 100%;
+	 height: 100%;
+	 margin: 0;
+   
+   
+}
+ body {
+	 transition: background-color 0.6s cubic-bezier(0.7, 0, 0.7, 1);
+   
+  background-color: black;
+   color: #cdf0f5;
+
+}
+
+ body.dark span {
+	 color: #fff;
+}
+ .toggle {
+	 display: flex;
+	 align-items: center;
+	 margin: 1em 0 0 1em;
+}
+ .toggle span {
+	 font-family: sans-serif;
+	 font-weight: 700;
+	 letter-spacing: 1px;
+	 transition: color 0.4s cubic-bezier(0.7, 0, 0.7, 1);
+}
+ input[type="checkbox"] {
+	 width: 0;
+	 height: 0;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+}
+ #label {
+	 display: block;
+	 background-color: #158d9c;
+  color: black;
+	 width: 60px;
+	 height: 30px;
+	 border-radius: 2em;
+	 overflow: hidden;
+	 transition: transform 0.6s cubic-bezier(0.7, 0, 0.7, 1);
+	 margin: 0 0.5em;
+}
+ #label::before {
+	 content: '';
+	 position: absolute;
+	 width: 100%;
+	 height: 100%;
+	 background-color: #81c784;
+	 border-radius: inherit;
+	 transform: translateX(-80%);
+	 transition: transform 0.4s cubic-bezier(0.7, 0, 0.7, 1);
+}
+ #label::after {
+	 content: '';
+	 position: absolute;
+	 height: 100%;
+	 width: 30px;
+	 background-color: #fff;
+	 border-radius: 50%;
+	 box-shadow: 0 0 5px rgba(0, 0, 0, .35);
+	 border: 1px solid #ccc;
+	 transform: translateX(0);
+	 cursor: pointer;
+	 transition: transform 0.4s cubic-bezier(0.7, 0, 0.7, 1);
+	 z-index: 1;
+}
+ input[type="checkbox"]:checked ~ #label::after {
+	 transform: translateX(100%);
+}
+ input[type="checkbox"]:checked ~ #label::before {
+	 transform: translateX(0);
+}
+ input[type="checkbox"]:checked ~ #label, input[type="checkbox"]:focus ~ label {
+	 outline: solid 1px lightgreen;
+}
+ 
+
+.navbar-dark {
+  font-weight: 600;
+    font-size: 16px;
+   /* Change the height value to your desired height */
+}
+.navbar-inverse {
+  padding-top: 6px; padding-bottom:6px ; 
+ }
+.navbar-toggle {
+  margin-top: 30px; /* Adjust the margin-top as needed */
+  /* Adjust the padding as needed */
+}
+@media only screen and (min-width: 400px){ 
+ 
+  #ul1nav,#ul2nav{
+    padding: 20px 0;
+  }
+  
+}
