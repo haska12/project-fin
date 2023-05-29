@@ -13,8 +13,12 @@ def send_forget_password(email,token,pk):
     # start email host server for test only
     # python -m smtpd -n -c DebuggingServer localhost:587
 
-    #send_mail(subject,message,from_email,recipient_list)
+    send_mail(subject,message,from_email,recipient_list)
     return True
 
-
-
+def message_send(email ,subject,message):
+    from_email=email
+    recipient_list=[settings.EMAIL_HOST_USER]
+    print(message)
+    send_mail(subject,message,from_email,recipient_list)
+    return True

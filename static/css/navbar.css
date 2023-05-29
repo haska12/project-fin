@@ -6,6 +6,7 @@
     --bgLight: rgb(190, 181, 181);
     --textbtncolor:rgb(29, 221, 189)
   }
+  
   body.dark {
 	background: #dbe1e2 url("https://www.toptal.com/designers/subtlepatterns/patterns/sports.png") fixed;
   color: black;

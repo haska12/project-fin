@@ -1,125 +1,171 @@
 {% extends 'navbar.html' %}
-
+{% load static %}
 {% block title %}
 <title>Contact</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<link rel="stylesheet" href="{% static 'css\contact.css' %}">
 <style>
-   
-    .text{
-        font-size:medium; 
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-      
-       
-    }
-    #text{
-      
-      font-size: xx-large; 
-      font-family: Verdana, Geneva, Tahoma, sans-serif;
-       color: #3923b9; 
-       margin-left: 40%;
-      
-       
-       
-    }
-    #userenfas{
-    
+    @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
+body {
+  background-color: black;
+  color: #cdf0f5;
+}
 
-    width: 40%;
-    height: 60%;
-    background-color: rgba(255,255,255,0.13);
-    position: relative;
-    
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);
-    padding: 19px ;
+.cantente {
+    margin-top: 300px;
+  height: 60%;
+  width: 60%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
+  display: grid;
+  grid-template-columns: 400px auto;
+  padding: 14px;
+}
+
+.cantente .info {
+  background-color: #283655;
+  padding-top: 90px;
+}
+
+.cantente .info .contente-info {
+  padding-top: 10px;
+  padding-left: 40px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.cantente .info .gid {
+  display: grid;
+  grid-template-columns: 60px auto;
+  padding-left: 14px;
+}
+
+.cantente .form-contacte {
+  background-color: #D0E1F9;
+}
+
+.cantente .form-contacte #head-info {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #000;
+  font-size: 31px;
+  font-weight: bolder;
+}
+
+.cantente .form-contacte #contacte1 {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 40px 40px 40px 80px;
+  gap: 10px;
+  padding: 14px;
+}
+
+.cantente .form-contacte #FirstName {
+  grid-row: span 1;
+  grid-column: span 1;
+}
+
+.cantente .form-contacte #LasteName {
+  grid-row: span 1;
+  grid-column: span 1;
+}
+
+.cantente .form-contacte #email {
+  grid-row: span 1;
+  grid-column: span 2;
+}
+
+.cantente .form-contacte #subgicte {
+  grid-row: span 1;
+  grid-column: span 2;
+}
+
+.cantente .form-contacte #messge {
+  grid-row: span 1;
+  grid-column: span 2;
+}
+
+.cantente .form-contacte #button {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  margin-top: 50px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cantente .form-contacte #button:hover {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+@media screen and (max-width: 1000px) {
+  .cantente {
+    margin-top: 300px;
   }
-.container{
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-.bubbles{
-    position: absolute;
-    display: flex;
 }
 
-.bubbles span{
-    position: relative;
-    width: 30px;
-    height: 30px;
-    background: aqua;
-    margin: 0 40px;
-    border-radius: 50%;
-    box-shadow: 0 0 0 10px #4fc3dc44,
-     0 0 50px #4fc3dc , 0 0 0 10px #4fc3dc;
-    animation: animate 15s linear infinite;
-    animation-duration: calc(100s/var(--i));
-    }
-.bubbles span:nth-child(even){
-    background: rgb(255, 0, 119);
-    box-shadow: 0 0 0 10px #4fc3dc44,
-    0 0 50px rgb(255, 0, 119) , 0 0 0 10px rgb(255, 0, 119);
-}
-
-
-    @keyframes animate {
-       0%{
-        transform: translateY(100vh) scale(0);
-       } 
-       100%{
-        transform: translateY(-0vh) scale(1);
-       } 
-    }</style>
+/*# sourceMappingURL=about.css.map */
+</style>
 {% endblock %}
 
 
 
 {% block userinfo %}
-<div class="container">
-    <div class="bubbles">
-        
-  <span style="--i:11 "></span>
-  <span style="--i:22 "></span>
-  <span style="--i:22 "></span>
-  <span style="--i:13 "></span>
-  <span style="--i:7 "></span>
-  <span style="--i:32 "></span>
-  <span style="--i:24 "></span>
-  
-  <span style="--i:14 "></span>
-  <span style="--i:19 "></span>
-  <span style="--i:8 "></span>
-  <span style="--i:4 "></span>
-  
-  <span style="--i:28 "></span>
-  <span style="--i:26 "></span>
-  
-  <span style="--i:13 "></span>
-  <span style="--i:15 "></span>
-  <span style="--i:6 "></span>
-  <span style="--i:23 "></span>
-  <span style="--i:16 "></span>
-  
+
+<div class="cantente">
+    <div class="info">
+
+        <h4 class="contente-info">Prof. Saïd TKATEK </h4>
+        <h4 class="contente-info">Département d'Informatique</h4>
+        <h4 class="contente-info">Université Ibn Tofail de Kénitra </h4>
+
+        <h4 class="contente-info"> <i class="bi bi-envelope-fill" style="padding-right: 20px;"></i> Université Ibn
+            Tofail </h4>
+        <h4 class="contente-info"> <i class="bi bi-telephone-fill " style="padding-right: 20px;"></i>0673715711
+        </h4>
+
     </div>
-  </div>
-<div id="userenfas">
-    <h1 id="text" >Contact</h1>
-    <h2 class="text ">Prof. Saïd TKATEK</h2>
+    <div class="form-contacte">
+        <h1 id="head-info">contact us</h1>
+        <form method='POST' action="">
+            {% csrf_token %}
 
-    <h2 class="text ">Département d'Informatique    </h2>
-    <h2 class="text "> Université Ibn Tofail de Kénitra    </h2>
-    <h2 class="text ">Université Ibn Tofail    </h2>
-    <h2 class="text ">Tél. : 0673715711</h2>
-    <h2 class="text ">Email : said.tkatek@uit.ac.ma</h2>
+            <div id="contacte1" style="color: black;">
 
+                
+                <input type="text" name="FirstName" placeholder="first name..." id="FirstName">
+                <input type="text" name="LasteName" placeholder="laste name..." id="LasteName">
 
+               
+                <input type="email" name="email" placeholder="email..." id="email">
+                
+                <input type="text" name="subject" placeholder="subgicte..." id="subgicte">
+
+                <textarea name="message" id="messge"    > messge</textarea>
+                
+
+                
+            </div>
+            <input id="button" class="btn login_btn" type="submit" value="Sign up " >
+
+    </div>
 
 </div>
+
 
 {% endblock %}

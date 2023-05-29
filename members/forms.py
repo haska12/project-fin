@@ -48,4 +48,6 @@ class EncadrementDesMAasterForm(forms.ModelForm):
    class Meta:
       model=EncadrementDesMAasterModels
       fields=['name','SujetsDesPFE','AnneeInscription']
+
+
       

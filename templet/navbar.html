@@ -18,8 +18,9 @@
 </head>
 
 <body>
-  <!--navbar navbar-expand-md navbar-dark bg-dark shadow-sm-->
-  <nav class="navbar navbar-inverse   navbar-dark   " style="background-color: black;">
+  <div class="page-content">
+    <!--navbar navbar-expand-md navbar-dark bg-dark shadow-sm-->
+  <nav id="nav" class="navbar fixed-top navbar-inverse   navbar-dark   " style="background-color: black;">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -115,6 +116,8 @@
   {% block userinfo %}
 
   {% endblock %}
+  </div>
+  
  <script src="{% static '/js/navbar.js' %}" type="text/javascript"></script>
 
 </body>

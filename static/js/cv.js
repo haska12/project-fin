@@ -1,4 +1,4 @@
-
+console.log("zsadfgh")
 
 $(document).on("click", "a", function() {
     //this == the link that was clicked

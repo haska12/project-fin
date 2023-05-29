@@ -36,8 +36,13 @@ class UserProfileModels(models.Model):
        
 
 class tokenModels(models.Model):
-    iduser =models.CharField(max_length=200)
+    iduser =models.OneToOneField(User, on_delete=models.CASCADE)
+    postdate =models.DateField( null=True, blank=True)
     token=models.CharField(max_length=100)
+    def save(self):
+        if not self.id:
+            self.postdate = timezone.now()
+        super(tokenModels, self).save()
 
 class moduleModels(models.Model):
     modulenom =  models.CharField(max_length= 55, blank=False, null=False,default="module" ,unique=True ,primary_key=True  )
@@ -86,8 +91,8 @@ class CoursModels(models.Model):
 
 class AnnoncesModels(models.Model):
     name = models.CharField(max_length= 100, blank=False, null=False,default="title" ,unique=True)
-    postdate =models.DateField( null=True, blank=True,default=timezone.now())
-    updated =models.DateField(null=True, blank=True,default=timezone.now())
+    postdate =models.DateField( null=True, blank=True)
+    updated =models.DateField(null=True, blank=True)
     text  =models.CharField(max_length= 700 )
     link =models.CharField(max_length= 100 ,blank=False, null=False,default="#" )
     def __repr__(self):

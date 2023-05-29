@@ -10,7 +10,7 @@ from django.contrib.auth.models import Group
 from django.http import FileResponse
 from django.http import HttpResponse,Http404
 from .decorators import unauthenticated_user,allowed_users
-from .helps import send_forget_password
+from .helps import send_forget_password,message_send
 import os
 import uuid
 from django.contrib.auth.models import User
@@ -107,19 +107,32 @@ def forget_password_veiws(request,*args,**kwargs):
         except:
             form=tokenModels(iduser=user,token=token)
             form.save()
- 
+        
         t=send_forget_password(user.email,token,user.id)
     
       
     return render(request,"forget_password.html",list())
-
+from datetime import datetime
+def Token_Link_expire(dateCreate):
+    DateExpaire=datetime(dateCreate.year, dateCreate.month, dateCreate.day+3,0,0)
+    Datenow=datetime.now()
+    if DateExpaire < Datenow:
+        print("expaire",dateCreate.year, dateCreate.month, dateCreate)
+        return False
+    print("not expaire")
+    return True
+       
 def rest_password_veiws(request,token,pk):
     
     user =User.objects.get(id=pk)
 
     token2=tokenModels.objects.get(iduser=user)
+    if not Token_Link_expire(token2.postdate):
+        token2.delete()
+        return HttpResponse("<h1> expaire link </h1>")
+
     if token2.token!=token:
-        return HttpResponse("<h1> url not corectw </h1>")
+        return HttpResponse("<h1> url not corecte </h1>")
     form=createUserforms(instance=user)
     if request.method == 'POST':
         password1=request.POST.get('password1')
@@ -512,10 +525,24 @@ def Annonces_update_views(request,name):
     return render(request,"AnnoncesUplode.html",my_context)
 
 
+
+#---------------------------------------------------**********************
 @login_required(login_url="login")
 def Contact_page(request,*args,**kwargs):
+    if request.method == 'POST':
+        FirstName=request.POST.get('FirstName')
+        LasteName=request.POST.get('LasteName')
+        email=request.POST.get('email')
+        subject=request.POST.get('subject')
+        messge=request.POST.get('message')
+        print(messge)
+        print(message_send(email,subject,messge))
+
     my_context=list()
     return render(request,"Contact.html",my_context)
+
+
+
 
 @login_required(login_url="login")
 def These_desplay_page(request,*args,**kwargs):
