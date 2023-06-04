@@ -9,8 +9,10 @@
   toggle.addEventListener('change', () => {
     
     document.body.classList.toggle('dark');
-    if(localStorage.getItem("backgroundColorSteat")==="dark"){updated("normele")}
+    if(localStorage.getItem("backgroundColorSteat")==="dark"){updated("normele") }
     else if(localStorage.getItem("backgroundColorSteat")==="normele"){updated("dark")}
+
+  
    
   })
   function  updated(  color){

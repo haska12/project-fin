@@ -20,102 +20,100 @@
 <body>
   <div class="page-content">
     <!--navbar navbar-expand-md navbar-dark bg-dark shadow-sm-->
-  <nav id="nav" class="navbar fixed-top navbar-inverse   navbar-dark   " style="background-color: black;">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand disabled" href="#"><img id="log"
-            style=" position: relative;  height: 60px;width: 120px; padding: 0;margin: 0;background-color:black"
-            src="{% static '/img/logo1.png'  %}" alt="n"></a>
+    <nav id="nav" class="navbar fixed-top navbar-inverse   navbar-dark   " style="background-color: black;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand disabled" href="#"><img id="log"
+              style=" position: relative;  height: 60px;width: 120px; padding: 0;margin: 0;background-color:black"
+              src="{% static '/img/logo1.png'  %}" alt="n"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav" id="ul1nav">
+            <li><a href="{%url 'home' %}">Accueil</a></li>
+
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">Réalisations<span
+                  class="caret"></span></a>
+
+              <ul class="dropdown-menu">
+                <li>
+                  <td><a href="{% url 'Annonces_despleye' %}">Annonces</a></td>
+                </li>
+              </ul>
+            </li>
+
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">module<span
+                  class="caret"></span></a>
+              <ul class="dropdown-menu">
+                {% for x in modules %}
+                <li>
+
+                  <td><a href="{% url 'Modules_despay_views' x.modulenom  %}">{{ x.modulenom }} </a></td>
+
+                </li>
+                {% endfor %}
+              </ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">ENCADREMENT<span
+                  class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'These_desplay_page' %}">THESES</a></li>
+                <li><a href="{% url 'MAaster_desplay_page'%}">MASTER</a></li>
+                <li><a href="{% url 'Licence_desplay_page'%}"> LICENCE</a></li>
+
+              </ul>
+            </li>
+            <li><a href="#">AUTRES ACTIVITES</a></li>
+            <li><a href="{% url 'Contact_page'%}">Contact</a></li>
+
+            <!-- <li ><button onclick="myFunction()" id="btn" style="margin-top: 20px;"> background toggle</button></li>-->
+
+            {% if request.user.is_staff %}
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Update<span
+                  class="caret"></span></a>
+              <ul class="dropdown-menu">
+
+                <li><a href="{%url 'Modules_views' %}">modules</a></li>
+                <li><a href="{% url 'Series_Update' %}">Séries d'exercices</a></li>
+                <li><a href="{% url 'Examens_Update' %}">Examens des années précédentes</a></li>
+                <li><a href="{% url 'cour_Update' %}">Supports du cours</a></li>
+                <li><a href="{% url 'Annonces_views' %}">Annonces</a></li>
+                <li><a href="{% url 'These_update_page' %}">Encadrement Des Theses </a></li>
+                <li><a href="{% url 'Licence_update_page' %}">Encadrement Des Licence </a></li>
+                <li><a href="{% url 'MAaster_update_page' %}">Encadrement Des Master </a></li>
+              </ul>
+            </li>
+            {% endif %}
+
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right" id="ul2nav">
+            <li>
+              <div class="toggle">
+                <input type="checkbox" id="toggle">
+
+                <label for="toggle" id="label"></label>
+
+              </div>
+            </li>
+
+            <li><a class="list" href="{% url 'logoutUser'%}"><span class="glyphicon glyphicon-log-out"></span> logout
+              </a></a></li>
+            <li><a href="{% url 'signup' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav" id="ul1nav">
-          <li><a href="{%url 'home' %}">Accueil</a></li>
+    </nav>
 
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">Réalisations<span
-                class="caret"></span></a>
+    {% block userinfo %}
 
-            <ul class="dropdown-menu">
-              <li>
-                <td><a href="{% url 'Annonces_despleye' %}">Annonces</a></td>
-              </li>
-            </ul>
-          </li>
-
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="">module<span
-                class="caret"></span></a>
-            <ul class="dropdown-menu">
-              {% for x in modules %}
-              <li>
-
-                <td><a href="{% url 'Modules_despay_views' x.modulenom  %}">{{ x.modulenom }} </a></td>
-
-              </li>
-              {% endfor %}
-            </ul>
-          </li>
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">ENCADREMENT<span
-                class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="{% url 'These_desplay_page' %}">THESES</a></li>
-              <li><a href="{% url 'MAaster_desplay_page'%}">MASTER</a></li>
-              <li><a href="{% url 'Licence_desplay_page'%}"> LICENCE</a></li>
-
-            </ul>
-          </li>
-          <li><a href="#">AUTRES ACTIVITES</a></li>
-          <li><a href="{% url 'Contact_page'%}">Contact</a></li>
-
-      
-
-          <!-- <li ><button onclick="myFunction()" id="btn" style="margin-top: 20px;"> background toggle</button></li>-->
-
-          {% if request.user.is_staff %}
-          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Update<span
-                class="caret"></span></a>
-            <ul class="dropdown-menu">
-
-              <li><a href="{%url 'Modules_views' %}">modules</a></li>
-              <li><a href="{% url 'Series_Update' %}">Séries d'exercices</a></li>
-              <li><a href="{% url 'Examens_Update' %}">Examens des années précédentes</a></li>
-              <li><a href="{% url 'cour_Update' %}">Supports du cours</a></li>
-              <li><a href="{% url 'Annonces_views' %}">Annonces</a></li>
-              <li><a href="{% url 'These_update_page' %}">Encadrement Des Theses </a></li>
-              <li><a href="{% url 'Licence_update_page' %}">Encadrement Des Licence </a></li>
-              <li><a href="{% url 'MAaster_update_page' %}">Encadrement Des Master </a></li>
-            </ul>
-          </li>
-          {% endif %}
-
-          </li>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right" id="ul2nav">
-          <li>
-            <div class="toggle">
-              <input type="checkbox" id="toggle">
-
-              <label for="toggle" id="label"></label>
-
-            </div>
-          </li>
-
-          <li><a class="list" href="{% url 'logoutUser'%}"><span class="glyphicon glyphicon-log-out"></span> logout
-            </a></a></li>
-          <li><a href="{% url 'signup' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-          <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  {% block userinfo %}
-
-  {% endblock %}
+    {% endblock %}
   </div>
   
  <script src="{% static '/js/navbar.js' %}" type="text/javascript"></script>

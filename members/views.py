@@ -299,6 +299,7 @@ def Examen_Update_views(request,pk):
     return render(request,"ExamensUpload.html",cotexte)
 
 @login_required(login_url="login")
+@allowed_users(Allowed_roles=['admin','professeure'])
 def Examen_Delete_views(request,pk):
     obj=ExamensModels.objects.get(id=pk)
     file_path=obj.file.path
@@ -325,6 +326,7 @@ def serie_pdf_view(request,pk):
     return response
 
 @login_required(login_url="login")
+
 def Serie_display_views(request,pk):
 
     obj =SeriesModels.objects.get(id=pk)
@@ -412,6 +414,7 @@ def img_pdf_view_all(request):
     
     
 @login_required(login_url="login")
+@allowed_users(Allowed_roles=['admin','professeure'])
 def Modules_views(request):
     form= ModulesForm()
     if request.method == 'POST':
@@ -446,7 +449,7 @@ def Modules_upload_views(request):
     my_context.update(list())
     return render(request,"modulesupload.html",my_context)
 
-
+@allowed_users(Allowed_roles=['admin','professeure'])
 def Modules_update_views(request,nom):
     #obj = moduleModels.objects.filter(modulenom=nom).values_list()
     obj = moduleModels.objects.get(modulenom=nom)
@@ -463,6 +466,7 @@ def Modules_update_views(request,nom):
     return render(request,"modulesupload.html",my_context)
 
 @login_required(login_url="login")
+@allowed_users(Allowed_roles=['admin','professeure'])
 def Modules_delete_views(request,nom):
     obj = moduleModels.objects.get(modulenom=nom)
     obj2 =SeriesModels.objects.filter(modulenom=nom)
@@ -482,34 +486,42 @@ def  Annonces_despleye_views(request):
     return render(request,"Annonces.html",my_context)
 
 @login_required(login_url="login")
+@allowed_users(Allowed_roles=['admin','professeure'])
 def Annonces_uplod_views(request):
     form= AnnoncesForm()
     if request.method == 'POST':
-        form= AnnoncesForm(request.POST,)
+        form= AnnoncesForm(request.POST)
 
         print(form.is_valid())
         if form.is_valid():
             form.save()
+        else:
+            print(6)
     my_context={"form":form}
     my_context.update(list())
     return render(request,"AnnoncesUplode.html",my_context)
 
+
 def Annonce_uplod_views(request,name):
+    
     obj=AnnoncesModels.objects.get(name=name)
     my_context={"form":obj}
     my_context.update(list())
     return render(request,"Annonce.html",my_context)
 
 @login_required(login_url="login")
+@allowed_users(Allowed_roles=['admin','professeure'])
+
 def  Annonces_views(request):
     my_context=list()
     return render(request,"AnnoncesUpdate.html",my_context)
-
+@allowed_users(Allowed_roles=['admin','professeure'])
 def Annonce_delete_views(request,):
     obj=AnnoncesModels.objects.get(name=name)
     obj.delete()
     return redirect("Annonces_uplod")
 
+@allowed_users(Allowed_roles=['admin','professeure'])
 @login_required(login_url="login")
 def Annonces_update_views(request,name):
     obj=AnnoncesModels.objects.get(name=name)
@@ -551,11 +563,13 @@ def These_desplay_page(request,*args,**kwargs):
 #EncadrementDesThesesupdate
 
 @login_required(login_url="login")
+@allowed_users(Allowed_roles=['admin','professeure'])
 def These_update_page(request,*args,**kwargs):
     my_context=list()
     return render(request,"EncadrementDesThesesupdate.html",my_context)
 #EncadrementDesThesesupload
 @login_required(login_url="login")
+@allowed_users(Allowed_roles=['admin','professeure'])
 def These_uplod_views(request):
     form=EncadrementDesThesesForm()
     if request.method == 'POST':
@@ -570,6 +584,7 @@ def These_uplod_views(request):
     return render(request,"EncadrementDesThesesupload.html",my_context)
 
 @login_required(login_url="login")
+@allowed_users(Allowed_roles=['admin','professeure'])
 def These_delete_views(request,pk):
     obj=EncadrementDesThesesModels.objects.get(id=pk)
     print(obj)
@@ -585,11 +600,13 @@ def Licence_desplay_page(request,*args,**kwargs):
     return render(request,"EncadrementDesLicenceDesplaye.html",my_context)
 #EncadrementDesLicenceUpdate
 @login_required(login_url="login")
+@allowed_users(Allowed_roles=['admin','professeure'])
 def Licence_update_page(request,*args,**kwargs):
     my_context=list()
     return render(request,"EncadrementDesLicenceUpdate.html",my_context)
 #EncadrementDesLicenceUpload
 @login_required(login_url="login")
+@allowed_users(Allowed_roles=['admin','professeure'])
 def Licence_upload_views(request):
     form=EncadrementDesLicenceForm()
     if request.method == 'POST':
@@ -604,6 +621,7 @@ def Licence_upload_views(request):
     return render(request,"EncadrementDesLicenceUpload.html",my_context)
 
 @login_required(login_url="login")
+@allowed_users(Allowed_roles=['admin','professeure'])
 def Licence_delete_views(request,pk):
     obj=EncadrementDesLicenceModels.objects.get(id=pk)
     print(obj)
@@ -619,11 +637,13 @@ def MAaster_desplay_page(request,*args,**kwargs):
     return render(request,"EncadrementDesMAasterModelsDdesplaye.html",my_context)
 #EncadrementDesMAasterUpdate
 @login_required(login_url="login")
+@allowed_users(Allowed_roles=['admin','professeure'])
 def MAaster_update_page(request,*args,**kwargs):
     my_context=list()
     return render(request,"EncadrementDesMAasterUpdate.html",my_context)
 #EncadrementDesMAasterupoad
 @login_required(login_url="login")
+@allowed_users(Allowed_roles=['admin','professeure'])
 def MAaster_upload_views(request):
     form=EncadrementDesMAasterForm()
     if request.method == 'POST':
@@ -638,6 +658,7 @@ def MAaster_upload_views(request):
     return render(request,"EncadrementDesMAasterupoad.html",my_context)
 
 @login_required(login_url="login")
+@allowed_users(Allowed_roles=['admin','professeure'])
 def MAaster_delete_views(request,pk):
     obj=EncadrementDesMAasterModels.objects.get(id=pk)
     obj.delete()
@@ -645,7 +666,7 @@ def MAaster_delete_views(request,pk):
 
 #---------------------------------------------------------------
 #python manage.py migrate --fake members zero
-
+@allowed_users(Allowed_roles=['admin','professeure'])
 def chat_bot_wiews(request):
     my_context=list()
     

@@ -4,18 +4,26 @@
     --white: rgb(250, 250, 250);
     --secondary: rgb(0, 59, 50);
     --bgLight: rgb(190, 181, 181);
-    --textbtncolor:rgb(29, 221, 189)
-  }
+    --textbtncolor:rgb(29, 221, 189);
+	--windocolor:rgb(0, 59, 50);
+	--textcolor : white;
+	--backgroundannonce: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23d23d09' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
+ --backgroundannoncecolor:#ee5522;
+}
   
+
   body.dark {
-	background: #dbe1e2 url("https://www.toptal.com/designers/subtlepatterns/patterns/sports.png") fixed;
+	background: white url("https://www.toptal.com/designers/subtlepatterns/patterns/sports.png") fixed;
   color: black;
   --primary: rgb(10, 10, 10);
   --white:rgb(46, 26, 26);
   --secondary: white;
   --textbtncolor:black;
-  
-}
+  --windocolor:black;
+  --textcolor : black;
+  --backgroundannoncecolor:#1E64EE;
+ --backgroundannonce: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%230054da' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
+  }
 *, *::before, *::after {
 	 position: relative;
 	 box-sizing: border-box;
@@ -103,7 +111,7 @@
  
 
 .navbar-dark {
-  font-weight: 600;
+  font-weight: bold;
     font-size: 16px;
    /* Change the height value to your desired height */
 }

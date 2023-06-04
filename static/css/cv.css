@@ -1,6 +1,6 @@
 body {
   width: 100vw;
-    height: 100vh;
+  height: 100vh;
   margin: 0;
 
 
@@ -8,16 +8,21 @@ body {
 
 
 
-html, body {margin: 0; height: 100%; overflow: hidden ;}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
 
 
 body .page-content {
-  margin:0 ;
+  margin: 0;
   width: 100%;
   height: 100%;
- 
+
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
   overflow-y: scroll
 }
 
@@ -27,9 +32,36 @@ body .page-content section {
   align-items: center;
   width: 100%;
   height: 100%;
+
+}
+
+#sec-1 {
   scroll-snap-align: start;
 }
-#nav{
+
+#sec-2 {
+  scroll-snap-align: start;
+}
+
+#sec-3 {
+  scroll-snap-align: start;
+  display: grid;
+  align-content: center;
+  gap: 2rem;
+  padding: 2rem;
+
+  font-family: "Oxygen", sans-serif;
+
+
+}
+
+body .page-content #sec-4 {
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: start;
+}
+
+#nav {
   scroll-snap-align: start;
 }
 
@@ -139,14 +171,14 @@ body .page-content:nth-of-type(1) #Ce-que-je-fais {
 }
 
 body .page-content:nth-of-type(1) #Ce-que-je-fais-comtent {
-  
+
   display: grid;
-  grid-template-columns: auto ;
+  grid-template-columns: auto;
   padding: 5px;
 }
 
 body .page-content:nth-of-type(1) .windo {
-  height: 400px;
+  height: 550px;
   width: 700px;
   background-color: rgba(255, 255, 255, 0.13);
   border-radius: 10px;
@@ -157,15 +189,25 @@ body .page-content:nth-of-type(1) .windo {
   padding: 30px 35px;
 }
 
- #Web-Development {
+.INFORMATIQUEScomp li {
+  background-color: var(--windocolor);
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  list-style: none;
+  margin: 7px 4px;
+  border-radius: 20px;
+  font-size: medium;
+}
+
+#Web-Development {
   position: relative;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   padding-bottom: 20px;
 }
 
-/*# sourceMappingURL=cv.css.map */
 
 
 
@@ -389,4 +431,67 @@ body .page-content:nth-of-type(1) .windo {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #b30000;
+}
+
+/*******DERNIERS DIPLÔMES UNIVERSITAIRES******/
+.DERNIERS_DIPLoMES_UNIVERSITAIRES{
+   
+  margin-top:200px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 80%;
+  display: grid;
+  grid-template-columns: auto ;
+  grid-template-rows: 200px 200px;
+}
+
+
+.card1 div,.card2 div{
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+background-color: brown;
+grid-column: span 1;
+grid-row:span 1;
+font-size: 50px;
+text-align: center;
+
+}
+
+.card1 h2,.card2 h2{
+  grid-column: span 1;
+grid-row:span 1;
+
+
+}
+
+.card1 p,.card2 p{
+  grid-column: span 2;
+grid-row:span 2;
+font-size: large;
+}
+
+
+
+.card1 , .card2{
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 10px 35px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 80px  auto;
+
+}
+
+.card1,
+.card2 {
+  background-color: var(--windocolor);
+  color: white;
 }

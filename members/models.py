@@ -6,7 +6,7 @@ from django.utils import timezone
 
 # Create your models here.
 try:
-  group1=Group.objects.get(name='professeure')
+  group1=Group.objects.get(name='professeure' )
 except:
    group1 = Group.objects.create(name='professeure')
 try:
