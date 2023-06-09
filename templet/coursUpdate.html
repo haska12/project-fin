@@ -1,30 +1,58 @@
 {% extends 'navbar.html' %}
-
+{% load static %}
 {% block title %}
 <title>Upload</title>
-<style>
-  .li{
-    padding: 10px;
-    border: 2px black solid;
-  }
+<link rel="stylesheet" href="{% static '/css/coursUpdate.css' %}">
 
-</style>
+
 
 {% endblock %}
 
 
 
 {% block userinfo %}
-<td><button><a href="{% url 'CoursUpload'   %}">New cour</a></button></td>
-{% for x in cours %}
-          <li class="li">
-            
-              <td class="td"><a href=" {% url 'Seriesdisplay'  x.id %} ">{{ x.name }}</a></td>
-              <td class="td"><button><a href="{% url 'cour_Update' x.id %}">Update</a></button></td>
-              <td class="td"><button><a href="{% url 'cour_Delete' x.id %}">delete</a></button></td>
-              
-          </li>
-        {% endfor %}
+
+<div class="content">
+  <button><a href="{% url 'CoursUpload'   %}">New cour</a></button>
+
+  <table class="table  ">
+    <thead style="color: aliceblue; background-color: #222A38; ">
+      <tr>
+        <th class="centerTxt"> cour mame</th>
+        <th class="centerTxt">Update</th>
+        <th class="centerTxt">Delete</th>
+      </tr>
+    </thead>
+
+    <tbody style=" color: #222A38; background-color: whitesmoke; ">
+
+      {% for x in cours %}
+      <tr>
+
+        <td class="centerTxt"><a style="text-decoration: none; color: black;"
+            href="{% url 'Seriesdisplay'  x.id %}">{{ x.name }} </a></td>
+        <td><button class="center" style="width: 90px;"><a style="text-decoration: none; color: #000;"
+              href="{% url 'cour_Update' x.id %}"><i class="bi bi-upload"></i> </button></td>
+
+        <td><button class="center" style="width: 90px;"><a style="text-decoration: none; color: #000;"
+              href="{% url 'cour_Delete' x.id %}"><i class="bi bi-trash3-fill"></i> </button></td>
+
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+
+  </table>
+</div>
+
+
+
+
+
+
+
+
 
 <!-- <p><a href="{% url 'home' %}">Return to home</a></p>-->
 {% endblock %}

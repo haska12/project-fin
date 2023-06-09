@@ -71,12 +71,14 @@ def login_views(request):
         if user is not None:
             login(request,user)
             return redirect('home')
+        else:
+            messages.success(request, "there was errour in login try again ... ")
     return render(request,"login.html",list())
 
 def logout_User(request,*args,**kwargs):
     logout(request)
     return redirect('login')
-
+from django.contrib import messages
 @unauthenticated_user
 def signup_views(request,*args,**kwargs):
     form= createUserforms()
@@ -89,6 +91,10 @@ def signup_views(request,*args,**kwargs):
             group=Group.objects.get(name='etudiants')
             user.groups.add(group)
             return redirect('login')
+        else:
+            messages.success(request, "there was errour in sign up try again ... ")
+        
+            
             
     cotexte={"form":form}
 

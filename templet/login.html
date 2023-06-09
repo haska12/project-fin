@@ -11,6 +11,18 @@
 
 
 {% block userinfo %}
+
+{% if messages %}
+                    
+              {% for message in messages %}
+              <div class="alert alert-danger alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Danger!</strong> {{ message }}
+              </div>
+               
+              {% endfor %}
+              
+              {% endif %}
 <div id="log">
     <form method='POST' action="">
         {% csrf_token %}
@@ -36,7 +48,7 @@
             
               <input id="button"  class="btn login_btn" type="submit" value="login " style="color: #000000;">
         
-            
+              
             <a href="{% url 'forget_password' %}">Forgot Password</a>
         
           </div>

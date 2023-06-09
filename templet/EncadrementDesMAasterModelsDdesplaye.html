@@ -1,36 +1,38 @@
 {% extends 'navbar.html' %}
-
+{% load static %}
 {% block title %}
 <title>home</title>
-<style> 
-  tr,th ,td{
-padding: 20px;
-border: 2px black solid;
-  }</style>
-{% endblock %}
+<link rel="stylesheet" href="{% static '/css/EncadrementDesMAasterModelsDdesplaye.css' %}">
+
+
+
+  {% endblock %}
 
 
 
 {% block userinfo %}
+<div class="content">
+  <table class="table  ">
+    <thead >
+      <tr>
+        <th scope="col"> name</th>
+        <th scope="col">Sujets des PFE Master Big Data et Clouad Computing </th>
+        <th scope="col">Annee </th>
 
+      </tr>
+    </thead>
+    <tbody >
+      {% for x in MAaster %}
 
-<table>
-    <tr>
-      <th> name</th>
-      <th>Sujets des PFE  Master Big Data et Clouad Computing  </th>
-      <th>Annee </th>
+      <tr>
+        <td scope="row"><a href="#">{{x.name}}</a></td>
+        <td> {{x.SujetsDesPFE}}</td>
+        <td>{{x.AnneeInscription}}</td>
 
-    </tr>
-{% for x in MAaster %}
+      </tr>
 
-<tr>
-    <td><a href="#">{{x.name}}</a></td>
-    <td> {{x.SujetsDesPFE}}</td>
-    <td>{{x.AnneeInscription}}</td>
-   
-    
-</tr>
-
-{% endfor %}
-</table>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
 {% endblock %}

@@ -1,102 +1,115 @@
 {% extends 'navbar.html' %}
 
+{% load static %}
+
 {% block title %}
 <title>home</title>
-<style>
-            table, th, td {
-          border:1px solid black;
-          margin: 10px;
-          padding: 20px;
-        }
-        
-/* Create three equal columns that floats next to each other */
-.column {
-  
-  float: left;
-  width: 15%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
- 
- 
+<link rel="stylesheet" href="{% static '/css/ModulseDisplay.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-}
-/** background-color: rgba(255,255,255,0.13);
-  border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);/
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
 {% endblock %}
 
 
 
 {% block userinfo %}
-<div class="row">
-  <div class="column" >
-    <table border='1'>
-      <tr>
-          <th>Examens</th>
-          <th>link</th>
-      </tr>
-          {% for x in Examens %}
-      {% if x.module.modulenom == form.modulenom  %}
-                <tr>
-                  <td>{{ x.name }}</td>
-                    <td><a href=" {% url 'Examendisplay'  x.id %} " target="_blank">afficher</a></td>
-                   
-                </tr>
-      
-                {% endif %}
-              {% endfor %}
-      </table>
-  </div>
-  <div class="column">
-      
-    <table border='1'>
 
-      <tr>
-          <th>cours</th>
-          <th>link</th>
-      </tr>
-      {% for x in cours %}
-      {% if x.module.modulenom == form.modulenom  %}
-      <tr>
-          <td>{{ x.name }}</td>
-          <td><a href="{% url 'Courdisplay'  x.id %}"target="_blank">afficher</a></td>
-        
-      </tr>
-      {% endif %}
-    {% endfor %}
-     </table>
-  </div>
-  <div class="column" >
-    <table border='1'>
-      <tr>
-          <th>Serie</th>
-          <th>link</th>
-      </tr>
-      {% for x in mambre %}
-    {% if x.module.modulenom == form.modulenom  %}
-        <tr>
-          <td>{{ x.name }}</td>
-            <td><a href=" {% url 'Seriesdisplay'  x.id %} " target="_blank">afficher</a></td>
-          
-        </tr>
-        {% endif %}
-      {% endfor %}
-
-    </table>
-  </div>
-</div>
-
+<div class="area" >
+  <ul class="circles">
    
-      
+
+
+
+    <div class="row">
+      <div class="column1">
+        <table class="table  ">
+          <thead style="color: aliceblue; background-color: #222A38;">
+    
+            <tr>
+              <th>Examens</th>
+              <th>afficher</th>
+            </tr>
+          </thead>
+          <tbody style=" color: #222A38; background-color: whitesmoke; ">
+            {% for x in Examens %}
+            {% if x.module.modulenom == form.modulenom  %}
+            <tr>
+              <td>{{ x.name }}</td>
+              <td><a href=" {% url 'Examendisplay'  x.id %} " target="_blank"><i
+                    class="bi bi-file-earmark-arrow-down-fill"></i></a></td>
+    
+            </tr>
+    
+            {% endif %}
+            {% endfor %}
+          </tbody>
+    
+        </table>
+      </div>
+      <div class="column2">
+    
+        <table class="table  ">
+          <thead style="color: aliceblue; background-color: #222A38;">
+            <tr>
+              <th>cours</th>
+              <th>afficher</th>
+            </tr>
+          </thead>
+          <tbody style=" color: #222A38; background-color: whitesmoke; ">
+    
+            {% for x in cours %}
+            {% if x.module.modulenom == form.modulenom  %}
+            <tr>
+              <td>{{ x.name }}</td>
+              <td><a href="{% url 'Courdisplay'  x.id %}" target="_blank"><i
+                    class="bi bi-file-earmark-arrow-down-fill"></i></a></td>
+    
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </table>
+    
+        </tbody>
+      </div>
+      <div class="column3">
+        <table class="table  ">
+          <thead style="color: aliceblue; background-color: #222A38;">
+    
+            <tr>
+              <th>Serie</th>
+              <th>afficher</th>
+            </tr>
+          </thead>
+          <tbody style=" color: #222A38; background-color: whitesmoke; ">
+            {% for x in mambre %}
+            {% if x.module.modulenom == form.modulenom  %}
+            <tr>
+              <td>{{ x.name }}</td>
+              <td><a href=" {% url 'Seriesdisplay'  x.id %} " target="_blank"><i
+                    class="bi bi-file-earmark-arrow-down-fill"></i></a></td>
+    
+            </tr>
+            {% endif %}
+            {% endfor %}
+          </tbody>
+    
+        </table>
+      </div>
+    </div>
+
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+  </ul>
+</div >
+
      
 {% endblock %}
+
+

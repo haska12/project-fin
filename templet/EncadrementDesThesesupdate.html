@@ -1,39 +1,52 @@
 {% extends 'navbar.html' %}
-
+{% load static %}
 {% block title %}
 <title>home</title>
-<style>
-.btnSubmit:active{
-    box-shadow: 0 3px gray;
-    transform: translateY(3px);
-} 
-  tr,th ,td{
-padding: 20px;
-border: 2px black solid;
-  }</style>
+<link rel="stylesheet" href="{% static '/css/Modules.css' %}">
+
 {% endblock %}
 
 
 
 {% block userinfo %}
 
-<button><a href="{% url 'These_uplod_views' %}">add Doctorant</a></button>
-<table>
-    <tr>
-      <th> Doctorant</th>
-      <th>Sujet de thèse  </th>
-      <th>année  d’inscription</th>
 
-    </tr>
-{% for x in Theses %}
-<tr>
-    <td>{{x.Doctorant}}</td>
-    <td> {{x.Sujet}}</td>
-    <td>{{x.AnneeInscription}}</td>
-    <td ><a href="{%url 'These_delete_views' x.id%}" >delete</a></td>
-    
-</tr>
-{% endfor %}
-</table>
+<div class="content">
+  <button><a href="{% url 'These_uplod_views' %}">add Doctorant</a></button>
+
+
+  <table class="table  ">
+    <thead style="color: aliceblue; background-color: #222A38;  ">
+      <tr>
+        <th class="centerTxt"> Doctorant</th>
+        <th class="centerTxt">Sujet de thèse  </th>
+        <th class="centerTxt">année  d’inscription</th>
+        <th class="centerTxt">delite</th>
+      </tr>
+    </thead>
+
+    <tbody style=" color: #222A38; background-color: whitesmoke; ">
+
+      {% for x in Theses %}
+      <tr>
+
+        <td class="centerTxt">{{x.Doctorant}}</td>
+        <td class="centerTxt"> {{x.Sujet}}</td>
+        <td class="centerTxt">{{x.AnneeInscription}}</td>
+        <td><button class="center" style="width: 90px;"><a style="text-decoration: none; color: #000;"
+          href="{%url 'These_delete_views' x.id%}"><i class="bi bi-trash3-fill"></i> </button></td>
+        
+
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+
+  </table>
+</div>
+
+
+
 
 {% endblock %}
