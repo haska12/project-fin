@@ -67,7 +67,15 @@
 
               </ul>
             </li>
-            <li><a href="#">AUTRES ACTIVITES</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">AUTRES ACTIVITES<span
+              class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{% url 'PUBLICATION_SCIENTIFIQUE_viewa' %}">PUBLICATION SCIENTIFIQUES            </a></li>
+
+
+          </ul>
+        </li>
+           
             <li><a href="{% url 'Contact_page'%}">Contact</a></li>
 
             <!-- <li ><button onclick="myFunction()" id="btn" style="margin-top: 20px;"> background toggle</button></li>-->

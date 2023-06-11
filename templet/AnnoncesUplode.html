@@ -1,23 +1,31 @@
 {% extends 'navbar.html' %}
+{% load static %}
 
 {% block title %}
 <title>cours</title>
+<link rel="stylesheet" href="{% static '/css/AnnoncesUplode.css' %}">
+
 {% endblock %}
 
 
 
 {% block userinfo %}
-<form method="post" enctype="multipart/form-data">
+<div class="centent">
+  <form method="post" enctype="multipart/form-data">
+    <h1 class="textcenter">upoad</h1>
     {% csrf_token %}
-    <input type="text " name="name" placeholder="name...">
-    <br>
-    <textarea name="text" id="" cols="30" rows="10" placeholder="text..."></textarea>
+   
+    <label for="Sujet" id="Sujet">Sujet</label>
+    <label for="name">name</label>
+    <textarea name="text" id="text" cols="30" rows="10" placeholder="text..."></textarea>
     
-    <br>
-    <input type="link " name="link" placeholder="link...">
+    <input type="text " id="name" name="name" placeholder="name...">
+    <label for="link">link</label>
+    <input type="link " id="link" name="link" placeholder="link...">
   
-    <input id="button"  type="submit" value="login " style="color: #000000;">
+    <button type="submit">Upload</button>
   </form>
+</div>
 
 
 {% endblock %}

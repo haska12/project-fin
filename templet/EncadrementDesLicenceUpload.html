@@ -1,20 +1,31 @@
 {% extends 'navbar.html' %}
+{% load static %}
 
 {% block title %}
 <title>Upload</title>
+<link rel="stylesheet" href="{% static '/css/EncadrementDesLicenceUpload.css' %}">
+
 {% endblock %}
 
 
 
 {% block userinfo %}
 
-<form method="post" enctype="multipart/form-data">
+<div class="centent">
+  <form method="post" enctype="multipart/form-data">
+
     {% csrf_token %}
-    {{ form.as_p }}
+    <h1 class="textcenter">upload</h1>
 
-
+  <label for="SujetsDesPFE"> Sujets DesPFE</label>
+<label for="EtudiantsConcernes"> Etudiants Concernes</label>
+<textarea name="SujetsDesPFE" id="SujetsDesPFE" cols="30" rows="10"></textarea>
+<input type="text" name="EtudiantsConcernes" id="EtudiantsConcernes">
+<label for="Filiere" >Filiere</label>
+  <input type="text" name="Filiere" id="Filiere" value="(SMI S6) 2020/2021	">
     <button type="submit">Upload</button>
   </form>
+</div>
 
 
 {% endblock %}

@@ -30,7 +30,7 @@ from members.views import These_desplay_page,These_update_page,These_uplod_views
 from members.views import Licence_desplay_page,Licence_update_page,Licence_upload_views,Licence_delete_views
 from members.views import MAaster_desplay_page,MAaster_update_page,MAaster_upload_views,MAaster_delete_views
 from members.views import forget_password_veiws,rest_password_veiws
-from members.views import logo_img_pdf_view,chat_bot_wiews,img_pdf_view_all
+from members.views import logo_img_pdf_view,img_pdf_view_all,PUBLICATION_SCIENTIFIQUE_viewa
 
 urlpatterns = [
 
@@ -49,7 +49,7 @@ urlpatterns = [
       path('img_pdf_view/', img_pdf_view, name='img_pdf_view'),
        path('img_pdf_view_all/', img_pdf_view_all, name='img_pdf_view_all'),
       
-path('chat_bot_wiews/',chat_bot_wiews,name='chat_bot_wiews'),
+path('PUBLICATION_SCIENTIFIQUE_viewa/',PUBLICATION_SCIENTIFIQUE_viewa,name='PUBLICATION_SCIENTIFIQUE_viewa'),
 
     path('Series_Upload/',Series_Upload_views,name='SeriesUpload'),
     path('Cours_Upload/',Cours_Upload_views,name='CoursUpload'),

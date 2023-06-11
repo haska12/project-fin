@@ -670,26 +670,11 @@ def MAaster_delete_views(request,pk):
     obj.delete()
     return redirect('MAaster_update_page')
 
-#---------------------------------------------------------------
-#python manage.py migrate --fake members zero
-@allowed_users(Allowed_roles=['admin','professeure'])
-def chat_bot_wiews(request):
+
+
+
+    
+# ////
+def PUBLICATION_SCIENTIFIQUE_viewa(request):
     my_context=list()
-    
-    return render(request,"help.html",my_context)
-
-from django.http import JsonResponse
-
-openai.api_key = "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"
-def chatapi(request):
-    response = openai.Completion.create(
-  model="text-davinci-003",
-  prompt="",
-  temperature=0.7,
-  max_tokens=256,
-  top_p=1,
-  frequency_penalty=0,
-  presence_penalty=0)
-    return JsonResponse(response)
-    
-
+    return render(request,"PUBLICATIONSCIENTIFIQUE.html",my_context)
