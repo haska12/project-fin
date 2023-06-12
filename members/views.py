@@ -101,6 +101,7 @@ def signup_views(request,*args,**kwargs):
     cotexte.update(list())
     return render(request,"signup.html",cotexte)
 
+@unauthenticated_user
 def forget_password_veiws(request,*args,**kwargs):
     if request.method == 'POST':
         usernam=request.POST.get('username')
@@ -127,12 +128,16 @@ def Token_Link_expire(dateCreate):
         return False
     print("not expaire")
     return True
-       
+
+@unauthenticated_user 
 def rest_password_veiws(request,token,pk):
     
     user =User.objects.get(id=pk)
 
-    token2=tokenModels.objects.get(iduser=user)
+    try:
+        token2=tokenModels.objects.get(iduser=user)
+    except:
+        return HttpResponse("<h1> expaire link </h1>")
     if not Token_Link_expire(token2.postdate):
         token2.delete()
         return HttpResponse("<h1> expaire link </h1>")
