@@ -204,10 +204,12 @@ def Serie_Update_views(request,pk):
     file_path=obj.file.path
     if request.method == 'POST':
         form= SeriesForm(request.POST,request.FILES,instance=obj)
+        print(form.is_valid())
         if form.is_valid():
             if os.path.isfile(file_path):
                 os.remove(file_path)
             form.save()
+            return redirect('Series_Update_views')
     cotexte={"form":form}
     cotexte.update(list())
     return render(request,"SeriesUpload.html",cotexte)
@@ -243,6 +245,7 @@ def Cours_Upload_views(request):
         form= coursForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
+            return redirect("cour_Update")
     cotexte={"form":form}
     cotexte.update(list())
     return render(request,"coursUpload.html",cotexte)
@@ -266,6 +269,7 @@ def cour_Update_views(request,pk):
             form.save()
             if os.path.isfile(file_path):
                 os.remove(file_path)
+            return redirect("cour_Update")
     cotexte={"form":form}
     cotexte.update(list())
     return render(request,"coursUpload.html",cotexte)
@@ -473,14 +477,17 @@ def Modules_upload_views(request):
 
 @allowed_users(Allowed_roles=['admin','professeure'])
 def Modules_update_views(request,nom):
-    #obj = moduleModels.objects.filter(modulenom=nom).values_list()
     obj = moduleModels.objects.get(modulenom=nom)
-    print(obj)
+
     form =ModulesForm(instance=obj)
     if request.method =='POST':
+        
         form =ModulesForm(request.POST,instance=obj)
+       
         if form.is_valid():
             form.save()
+            if request.POST.get('modulenom')!=moduleModels.objects.get(modulenom=nom):
+                moduleModels.objects.get(modulenom=nom).delete()
             return redirect('Modules_views') 
 
     my_context={"form":form}
@@ -491,9 +498,9 @@ def Modules_update_views(request,nom):
 @allowed_users(Allowed_roles=['admin','professeure'])
 def Modules_delete_views(request,nom):
     obj = moduleModels.objects.get(modulenom=nom)
-    obj2 =SeriesModels.objects.filter(modulenom=nom)
-    obj3=ExamensModels.objects.filter(modulenom=nom)
-    obj4=CoursModels.objects.filter(modulenom=nom)
+    obj2 =SeriesModels.objects.filter(module=nom)
+    obj3=ExamensModels.objects.filter(module=nom)
+    obj4=CoursModels.objects.filter(module=nom)
     obj3.delete()
     obj4.delete()
     obj2.delete()
@@ -531,9 +538,9 @@ def Annonce_uplod_views(request,name):
     my_context.update(list())
     return render(request,"Annonce.html",my_context)
 
+
 @login_required(login_url="login")
 @allowed_users(Allowed_roles=['admin','professeure'])
-
 def  Annonces_views(request):
     my_context=list()
     return render(request,"AnnoncesUpdate.html",my_context)
@@ -553,7 +560,7 @@ def Annonces_update_views(request,name):
         form= AnnoncesForm(request.POST,instance=obj)
         if form.is_valid():
             form.save()
-            return redirect("Annonces_uplod")
+            return redirect("home")
     my_context={"form":form}
     my_context.update(list())
     return render(request,"AnnoncesUplode.html",my_context)

@@ -3,6 +3,7 @@
 {% block title %}
 <title>cours</title>
 <link rel="stylesheet" href="{% static '/css/coursUpload.css' %}">
+<link rel="stylesheet" href="{% static '/css/backg.css' %}">
 
 
 {% endblock %}
@@ -15,22 +16,13 @@
   <form method="post" enctype="multipart/form-data">
     <h1 class="textcenter"> Upload</h1>
       {% csrf_token %}
-      <label for="name">name</label>
-      <input type="text" name="name" id="">
-      <label for="file">file</label>
-      <input type="file" name="file" id="">
-      <label for="module">module</label>
-      <select name="module" id="">
-        {% for x in modules %}
-        {{x.Modulenom}}
-        <option value="{{ x.modulenom }} ">{{ x.modulenom }} </option>
-  
-        {%  endfor %}
-      </select>
+      {{ form }}
+
   
           <button type="submit">Upload</button>
     </form>
   
   </div>
+  <script src="{% static '/js/backg.js' %}"></script>
 
 {% endblock %}

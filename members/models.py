@@ -93,7 +93,7 @@ class AnnoncesModels(models.Model):
     name = models.CharField(max_length= 100, blank=False, null=False,default="title" ,unique=True)
     postdate =models.DateField( null=True, blank=True)
     updated =models.DateField(null=True, blank=True)
-    text  =models.CharField(max_length= 700 )
+    text  =models.CharField(max_length= 1000 )
     link =models.CharField(max_length= 100 ,blank=False, null=False,default="#" )
     def __repr__(self):
         return 'Resume(%s)' % (self.name)

@@ -56,3 +56,4 @@
     color:var(--btn-color) ;
     background-color: var(--btn-background-color);
 }
+::placeholder{color: black;}
