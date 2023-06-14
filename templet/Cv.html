@@ -41,9 +41,7 @@
         <div> <button class="btn btn-secondary"><a href="/templet/cv/" download="cv"
                     style="text-decoration: none;     font-size: 15px;">download cv </a></button></div>
     </div>
-    <a href="#sec-2" id="scrol-1" class="center" style="margin-top: 500px; ">
-        <div class="scroll-down"></div>
-    </a>
+   
 
 </section>
 <section id="sec-2">
@@ -72,9 +70,7 @@
 
         </div>
 
-        <a href="#sec-3" class="center">
-            <div class="scroll-down"></div>
-        </a>
+       
     </div>
 
 </section>
@@ -82,25 +78,58 @@
 
     
     <div class="DERNIERS_DIPLoMES_UNIVERSITAIRES">
+        <div class="card1">
+           <div>1</div>
+     <h2>Habilitation Universitaire</h2>
+     <p> Intelligence artificielle et Big Data pour la prise de décision </p>
+        </div>
+        <div class="card2">
+           <div>2</div>
+   <h2> Doctorat National en Informatique</h2>
+   <p> Formulation et Résolution d’un Problème de Mobilité de Ressources
+       Humaines :Approche Hybride Algorithmes Génétiques et Théorie des Graphes
+      </p>
+        </div>
+       </div>
+   
+
+</section>
+<section id="sec-4" >
+
+    
+    <div class="DERNIERS_DIPLoMES_UNIVERSITAIRES">
+       
       <div class="card1">
           <div>1</div>
-          <h2>Habilitation Universitaire</h2>
-          <p> Intelligence artificielle et Big Data pour la prise de décision </p>
+          <h2>Enseignant chercheur permnant 
+          </h2>
+          <p> Cours magistral, TD et TP, Data Mining, et Programmation Python (Master: Big Data et Cloud
+            Computing) 2019/2020 et 2018/2019 </p>
       </div>
       <div class="card2">
           <div>2</div>
-          <h2> Doctorat National en Informatique</h2>
-          <p> Formulation et Résolution d’un Problème de Mobilité de Ressources
-              Humaines :Approche Hybride Algorithmes Génétiques et Théorie des Graphes
+          <h2>  Vacations au sein de Faculté des Sciences de Kenitra        </h2>
+          <p> Cours magistral, TD et TP et mini projets du module : Administration de base de données
+            (Master: Big Data et Cloud Computing) 2016/2017 , 2017/2018. 2011/2012
+            
           </p>
+          
       </div>
+      <div class="card2">
+        <div>2</div>
+        <h2> Enseignant Vacataire Au Centre d’Orientation et Planification de l’Éducation (COPE)</h2>
+        <p>Formation professionnelle dédiée aux inspecteurs stagiaires en planification et orientation au
+            Centre d’Orientation et Planification de l’Éducation (COPE), Ministère de l’éducation Nationale,
+            Rabat.: Module : Système d’information et analyse de données (cours, TD et TP ) au cours de
+            l’année scolaire 2016/2017.
+        </p>
+        
+    </div>
   </div>
-  <a href="#sec-4" class="center">
-      <div class="scroll-down"></div>
-  </a>
+  
 
 </section>
-<section id="sec-4">
+<section id="sec-5">
     <div id="Professional-Technical-Skills">
         <div id="Technical-Skills" style="width: 70%;  ">
             <h1 style="    font-size: 29px; font-weight: bold; color: var(--primary); text-align: center;"> Technical
@@ -201,9 +230,9 @@
         </div>
 
     </div>
-
-    </div>
     
+    </div>
+   
 </section>
 
 
@@ -227,14 +256,14 @@ function isElementVisible(element) {
 if (localStorage.getItem("isVisible")==null){localStorage.setItem("isVisible",0)}
 // Function to reload animation when element is visible
 function reloadAnimationOnVisible() {
-  var element = document.getElementById("sec-4");
+  var element = document.getElementById("sec-5");
 
 
     if (isElementVisible(element) && localStorage.getItem("isVisible")==0) {
 
 
      //   document.getElementById('progress-bar').style.animation = "loading-2 1.5s linear forwards 1.8s";
-        $("#sec-4").load(location.href + " #sec-4", "");
+        $("#sec-5").load(location.href + " #sec-5", "");
 
  localStorage.setItem("isVisible",1)
        

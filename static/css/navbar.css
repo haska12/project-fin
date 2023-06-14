@@ -11,6 +11,15 @@
  --backgroundannoncecolor:#ee5522;
  --backgroundannonces: black;
 
+
+ --color1-Blurred-animated:#f13a02 ;
+ --color2-Blurred-animated:#500421 ;
+ --color3-Blurred-animated:#0b2dc5;
+ --color4-Blurred-animated:#043a02 ;
+
+
+
+
 }
   
 
@@ -31,6 +40,38 @@
  --tbodyBackground-color:none;
  --theadBackground-color:#222A38;
  --contentBackground-color:whitesmoke;
+
+
+ --color1-animation:#6c3 ;
+    --color2-animation:#09f ;
+
+
+	--color1-Blurred-animated:#a7543b ;
+    --color2-Blurred-animated:#a35271 ;
+    --color3-Blurred-animated:#23a6d5;
+    --color4-Blurred-animated:#23d5ab ;
+
+
+
+	--Canva-moving-background-color1:#6feed9;
+	--Canva-moving-background-color2:#02c2f1;
+	--Canva-moving-background-color3:#c13cd3;
+	--Canva-moving-background-color4:#e4a085;
+
+
+	--Low-Poly-Background-color1:#02c2f1;
+    --Low-Poly-Background-color2:#6feed9;
+
+
+	
+	--color1-bak-animated:#93e0ae ;
+	--color2-bak-animated:#5DBDB6 ;
+	--color3-bak-animated:#59D4E1;
+	--color4-bak-animated:#51BCE8 ;
+  
+	--color5-bak-animated:#ca7586 ;
+	--color6-bak-animated:#E46653;
+	--color7-bak-animated:#74C390 ;
 }
 *, *::before, *::after {
 	 position: relative;
@@ -124,7 +165,7 @@
    /* Change the height value to your desired height */
 }
 .navbar-inverse {
-  padding-top: 6px; padding-bottom:6px ; 
+  padding-top: 6px; padding-bottom:10px ; 
   
  }
 .navbar-toggle {

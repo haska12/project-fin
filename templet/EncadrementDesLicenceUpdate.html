@@ -3,14 +3,16 @@
 {% block title %}
 <title>home</title>
 <link rel="stylesheet" href="{% static '/css/EncadrementDesLicenceUpdate.css' %}">
+<link rel="stylesheet" href="{% static '/css/Low-Poly-Background.css' %}">
+<script src="{% static '/js/Low-Poly-Background.js' %}"></script>
 
 {% endblock %}
 
 
 
 {% block userinfo %}
-
-
+<div id="bg"></div>
+<br><br>
 
 <div class="content">
   <button><a href="{% url 'Licence_upload_views'%}">add Etudiants</a></button>

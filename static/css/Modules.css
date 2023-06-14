@@ -42,7 +42,7 @@ td button{
     
     .content{
       margin-top: 200px;
-  height:400px;
+  height:450px;
   width: 60%;
   display: grid;
 grid-template-columns: auto;

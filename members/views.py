@@ -105,18 +105,26 @@ def signup_views(request,*args,**kwargs):
 def forget_password_veiws(request,*args,**kwargs):
     if request.method == 'POST':
         usernam=request.POST.get('username')
-        user =User.objects.get(username=usernam)
-        token=uuid.uuid4()
         try:
-            token2=tokenModels.objects.get(iduser=user)
-            token2.token=token
-            token2.save()
-        except:
-            form=tokenModels(iduser=user,token=token)
-            form.save()
+            user =User.objects.get(username=usernam)
+            token=uuid.uuid4()
+            try:
+                token2=tokenModels.objects.get(iduser=user)
+                token2.token=token
+                token2.save()
+                messages.success(request, "le lien a été envoyé ... ",extra_tags='success')
+            except:
+                form=tokenModels(iduser=user,token=token)
+                form.save()
+            messages.success(request, "le lien a été envoyé ... ",extra_tags='success')
         
-        t=send_forget_password(user.email,token,user.id)
-    
+            t=send_forget_password(user.email,token,user.id)
+        except:
+            txt="aucun utilisateur trouvé avec le nom d'utilisateur "+usernam+" ... "
+            messages.error(request,txt ,extra_tags='error')
+
+        
+        
       
     return render(request,"forget_password.html",list())
 from datetime import datetime
@@ -153,7 +161,11 @@ def rest_password_veiws(request,token,pk):
             user.set_password(password1)
             user.save()
             token2.delete()
-            return redirect('login')
+            messages.success(request, "changement de mot de passe réussi ... ",extra_tags='success')
+            #return redirect('login')
+        else:
+            
+            messages.error(request, "une erreur s'est produite lors de la connexion, essayez à nouveau... " ,extra_tags='error')
 
     cotexte={"form":form}
     cotexte.update(list())
@@ -207,7 +219,6 @@ def Series_delete_views(request,pk):
     obj =SeriesModels.objects.get(id=pk)
     file_path=obj.file.path
     if request.method == 'POST':
-        print(pk)
         
         try:
             if os.path.isfile(file_path):

@@ -7,9 +7,7 @@
 
 .content{
    
-      
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
+ 
   scroll-snap-type: y mandatory;
   overflow-y: scroll
 }
@@ -48,7 +46,7 @@ td button{
 grid-template-columns: auto;
 grid-template-rows: 40px auto ;
 background-color: white;
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
