@@ -220,21 +220,18 @@ def Series_delete_views(request,pk):
     
     obj =SeriesModels.objects.get(id=pk)
     file_path=obj.file.path
-    if request.method == 'POST':
+
         
-        try:
+    try:
             if os.path.isfile(file_path):
                 os.remove(file_path)
                 obj.delete()
-        except:
+    except:
             print("file no found")
         
-        return redirect("Series_Update")
-    cotexte= {
-        "Serie":obj
-    }
-   
-    return render(request,"SerieDelete.html",cotexte)
+    return redirect("Series_Update")
+  
+    
 
 #-----------------------------------
 @login_required(login_url="login")
@@ -279,15 +276,13 @@ def cour_Update_views(request,pk):
 def cour_Delete_views(request,pk):
     obj= CoursModels.objects.get(id=pk)
     file_path=obj.file.path
-    if request.method == 'POST':
-        if os.path.isfile(file_path):
-                os.remove(file_path)
+
+    if os.path.isfile(file_path):
+        os.remove(file_path)
         obj.delete()
-        return redirect("cour_Update")
+    return redirect("cour_Update")
               
-    cotexte={"cour":obj}
-    cotexte.update(list())
-    return render(request,"courDelete.html",cotexte)
+   
 #----------------------------------
 @login_required(login_url="login")
 @allowed_users(Allowed_roles=['admin','professeure'])
@@ -329,14 +324,12 @@ def Examen_Update_views(request,pk):
 def Examen_Delete_views(request,pk):
     obj=ExamensModels.objects.get(id=pk)
     file_path=obj.file.path
-    if request.method == 'POST':
-        obj.delete()
-        if os.path.isfile(file_path):
-             os.remove(file_path)  
-        return redirect("Examens_Update")        
-    cotexte={"Examen":obj}
-    cotexte.update(list())
-    return render(request,"ExamensDelete.html",cotexte)
+    
+    obj.delete()
+    if os.path.isfile(file_path):
+        os.remove(file_path)  
+    return redirect("Examens_Update")        
+   
 #----------------------
 
 def serie_pdf_view(request,pk):
