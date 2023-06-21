@@ -148,7 +148,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 EMAIL_HOST = 'localhost'
-
+"""
+Email provider	     SMTP server host
+Gmail	             smtp.gmail.com
+Outlook/Hotmail  	smtp-mail.outlook.com
+Yahoo	           smtp.mail.yahoo.com
+"""
+#The EMAIL_PORT setting must be set to 587
+#https://www.sitepoint.com/django-send-email/
 EMAIL_PORT = '587'
 EMAIL_HOST_USER = 'yasserhaska30@gmail.com'
 EMAIL_HOST_PASSWORD = ''
