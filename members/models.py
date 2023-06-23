@@ -8,11 +8,11 @@ from django.utils import timezone
 try:
   group1=Group.objects.get(name='professeure' )
 except:
-   group1 = Group.objects.create(name='professeure')
+   group1 = Group.objects.create(name='professeure',permissions=all)
 try:
   group1=Group.objects.get(name='admin')
 except:
-   group1 = Group.objects.create(name='admin')
+   group1 = Group.objects.create(name='admin',permissions=all)
 try:
   group2=Group.objects.get(name='etudiants')
 except:

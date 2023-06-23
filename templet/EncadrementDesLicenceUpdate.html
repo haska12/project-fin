@@ -23,7 +23,7 @@
       <tr>
         <th class="centerTxt"> Sujet de PFE de la Licence</th>
         <th class="centerTxt">Etudiants concernés</th>
-        <th class="centerTxt">Filière</th>
+        <th class="centerTxt">Filière date</th>
         <th class="centerTxt">Delete</th>
       </tr>
     </thead>
@@ -31,7 +31,7 @@
     <tbody style=" color: #222A38; background-color: whitesmoke; ">
 
       {% for x in Licence %}
-      <tr>
+      <tr >
 
         <td class="centerTxt">{{x.SujetsDesPFE}}<a href="#"></a></td>
         <td class="centerTxt"> {{x.EtudiantsConcernes}}</td>

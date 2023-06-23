@@ -92,14 +92,31 @@ def signup_views(request,*args,**kwargs):
             user.groups.add(group)
             return redirect('login')
         else:
-            messages.success(request, "there was errour in sign up try again ... ")
-        
-            
-            
+            messages.success(request, "there was errour in sign up try again ... ")       
     cotexte={"form":form}
 
     cotexte.update(list())
     return render(request,"signup.html",cotexte)
+
+@unauthenticated_user
+def is_super_user_signup_views(request,*args,**kwargs):
+    form= createUserforms()
+    if request.method == 'POST':
+        form= createUserforms(request.POST)
+
+        if form.is_valid():
+            user=form.save()
+            username= form.cleaned_data.get('username')
+            group=Group.objects.get(name='professeure')
+            user.groups.add(group)
+            return redirect('login')
+        else:
+            messages.success(request, "there was errour in sign up try again ... ")       
+    cotexte={"form":form}
+
+    cotexte.update(list())
+    return render(request,"signup.html",cotexte)
+    
 
 @unauthenticated_user
 def forget_password_veiws(request,*args,**kwargs):
