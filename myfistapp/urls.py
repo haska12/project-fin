@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 
-
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path
 from members.views import home_page,login_views,signup_views,logout_User,Series_Upload_views
 from members.views import Cours_Upload_views,Examens_Upload_views,Serie_display_views,Cour_display_views,Examen_display_views,Modules_views
@@ -103,3 +103,4 @@ path('MAaster_update/',MAaster_update_page,name="MAaster_update_page"),
 path('MAaster_upload/',MAaster_upload_views,name="MAaster_upload_views"),
 path('MAaster_delete/<str:pk>/',MAaster_delete_views,name="MAaster_delete_views"),
 ]
+urlpatterns+=staticfiles_urlpatterns()

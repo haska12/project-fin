@@ -3,30 +3,44 @@ from django.contrib.auth.models import Group, Permission,User
 import django.contrib.auth.models
 from django.utils import timezone
 
-
 # Create your models here.
 try:
   group1=Group.objects.get(name='professeure' )
 except:
-   group1 = Group.objects.create(name='professeure',permissions=all)
+    try:
+        group1 = Group.objects.create(name='professeure')
+    except:
+        print("erour")  
+   
 try:
   group1=Group.objects.get(name='admin')
 except:
-   group1 = Group.objects.create(name='admin',permissions=all)
+    try:
+        group1 = Group.objects.create(name='admin')
+    except:
+        print("erour")
+   
 try:
   group2=Group.objects.get(name='etudiants')
 except:
-   group2 = Group.objects.create(name='etudiants')
+    try:
+        group2 = Group.objects.create(name='etudiants')
+    except:
+        print("erour")
+   
 
 try:
   user=User.objects.get(username='said tkatek')
 except:
-   user =User.objects.create(username='said tkatek', email='saidtkatek@gmail.com',first_name='said',last_name='tkatek',password='Qwert1234',is_staff=True,is_superuser=True)
-  
+    try:
+        user =User.objects.create(username='said tkatek', email='saidtkatek@gmail.com',first_name='said',last_name='tkatek',password='Qwert1234',is_staff=True,is_superuser=True)
+    except:
+        print("errur")
 try:
     user.groups.add(group1)
 except:
     print("error")
+
 
 
 class UserProfileModels(models.Model):
