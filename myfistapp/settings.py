@@ -55,6 +55,7 @@ MIDDLEWARE = [
   'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     
+    
 ]
 
 ROOT_URLCONF = 'myfistapp.urls'
