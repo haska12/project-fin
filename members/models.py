@@ -30,10 +30,10 @@ except:
    
 
 try:
-  user=User.objects.get(username='said tkatek')
+  user=User.objects.get(username='said')
 except:
     try:
-        user =User.objects.create(username='said tkatek', email='saidtkatek@gmail.com',first_name='said',last_name='tkatek',password='Qwert1234',is_staff=True,is_superuser=True)
+        user =User.objects.create(username='said', email='saidtkatek@gmail.com',first_name='said',last_name='tkatek',password='na_rnSw3*^zQPs-',is_staff=True,is_superuser=True)
     except:
         print("errur")
 try:
