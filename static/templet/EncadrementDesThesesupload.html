@@ -1,0 +1,36 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block title %}
+<title>Upload</title>
+<link rel="stylesheet" href="{% static '/css/EncadrementDesThesesupload.css' %}">
+<link rel="stylesheet" href="{% static '/css/Sliding_Diagonals.css' %}">
+
+{% endblock %}
+
+
+
+{% block userinfo %}
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
+<div class="centent">
+  
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h1 class="textcenter">upload</h1>
+   <label for="Sujet" id="SujetL">Sujet</label>
+   <label for="Doctorant" id="DoctorantL">Doctorant</label>
+   <textarea name="Sujet" id="Sujet" cols="30" rows="10"></textarea>
+   <input type="text" name="Doctorant" id="Doctorant" >
+   <label for="AnneeInscription" id="AnneeInscriptionL">Annee Inscription</label>
+   <input type="AnneeInscription" name="AnneeInscription" id="AnneeInscription">
+
+    <button type="submit">Upload</button>
+  </form>
+</div>
+
+
+
+{% endblock %}

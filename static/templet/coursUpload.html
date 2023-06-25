@@ -1,0 +1,28 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block title %}
+<title>cours</title>
+<link rel="stylesheet" href="{% static '/css/coursUpload.css' %}">
+<link rel="stylesheet" href="{% static '/css/backg.css' %}">
+
+
+{% endblock %}
+
+
+
+{% block userinfo %}
+<div class="centent">
+
+  <form method="post" enctype="multipart/form-data">
+    <h1 class="textcenter"> Upload</h1>
+      {% csrf_token %}
+      {{ form }}
+
+  
+          <button type="submit">Upload</button>
+    </form>
+  
+  </div>
+  <script src="{% static '/js/backg.js' %}"></script>
+
+{% endblock %}

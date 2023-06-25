@@ -1,0 +1,56 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block title %}
+<link rel="stylesheet" href="C:\Users\yasser\Documents\GitHub\project-fin\templet\css\home.css">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&family=Poppins:wght@200&display=swap"
+    rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet" />
+<title>Portfolio</title>
+<link  href="{% static '/css/home.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+
+{% block userinfo %}
+
+  
+<header id="userin">
+    
+  <div class="hero flex items-centre justify-between">
+      <div class="left flex-1 justify-center">
+          <img src="{% static '/img/stkat.png'  %}" />
+      </div>
+      <div class="right flex-1">
+          <h1 id="Bonjour"  style="    font-size: 29px; font-weight: bold;">Bonjour,Je suis  Said Tkatek</h1>
+          
+              <h3 id="desc">
+              <span >
+                  <p style="color: var(--white); font-size: medium;">Je suis <br>
+                      Enseignant Chercheur en Informatique <br>
+                      Département d’informatique, <br>
+                      Faculté des sciences <br>
+                      Université Ibn Tofail de Kénitra <br>
+                      
+                        
+               
+                        
+                      
+                    
+                    </p>
+                     
+              </span>
+          </h3>
+      
+          <div>
+            <button class="btn btn-secondary"><a href="{% url 'CV' %}" style="text-decoration: none;     font-size: 15px;">Lire CV</a></button></div>
+      </div>
+  </div>
+</header>
+<script src="{% static '/js/home.js'%}">
+        
+    </script>
+{% endblock %}

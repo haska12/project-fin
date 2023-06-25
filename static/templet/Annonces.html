@@ -1,0 +1,53 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block title %}
+<title>Annonces</title>
+<link rel="stylesheet" href="{% static '/css/Annones.css' %}">
+{% endblock %}
+
+
+
+{% block userinfo %}
+
+<div class="area" >
+  <ul class="circles">
+    <div class="content">
+      <table class="table  ">
+        <thead style="color: aliceblue; background-color: #222A38;" >
+          <tr>
+            <th scope="col"> Annonces</th>
+            <th scope="col">post date</th>
+            <th scope="col">updated date</th>
+            
+          </tr>
+        </thead>
+        <tbody  style=" color: #222A38; background-color: whitesmoke; "  >
+          {% for x in Annonces %}
+    <tr >
+        <td scope="row"><a style="color: #222A38;" href="{% url 'Annonce_uplod' x.name %}">{{x.name}}</a></td>
+        <td>{{x.postdate|date:"D ,d M ,Y "}}</td>
+        <td>{{x.updated|date:"D ,d M ,Y "}}</td>
+    </tr>
+    
+    {% endfor %}
+        </tbody> 
+    
+    </table>
+     </div>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+  </ul>
+</div >
+
+
+
+{% endblock %}

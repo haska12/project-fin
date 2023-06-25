@@ -1,0 +1,56 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block title %}
+<title>home</title>
+<link rel="stylesheet" href="{% static '/css/AnnoncesUpdate.css' %}">
+<link rel="stylesheet" href="{% static '/css/Sliding_Diagonals.css' %}">
+
+
+{% endblock %}
+
+
+
+{% block userinfo %}
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
+<div class="content">
+  <button><a href="{% url 'Annonces_uplod' %} ">Annonces</a></button>
+
+  <table class="table  ">
+    <thead style="color: aliceblue; background-color: #222A38;  height: 60px;">
+      <tr>
+        <th class="centerTxt"> Annonces</th>
+        <th class="centerTxt">post date</th>
+        <th class="centerTxt">updated date</th>
+        <th class="centerTxt">update</th>
+        <th class="centerTxt">delete</th>
+      </tr>
+    </thead>
+
+    <tbody style=" color: #222A38; background-color: whitesmoke; ">
+
+      {% for x in Annonces %}
+      <tr>
+
+        <td class="centerTxt"><a style="text-decoration: none; color: black;"
+            href="{% url 'Annonce_uplod' x.name %}">{{ x.name }} </a></td>
+        <td class="centerTxt" style=" color: black;"> {{x.postdate}}</td>
+        <td style=" color: black;">{{x.updated}}</td>
+        <td><button class="center" style="width: 90px;"><a style="text-decoration: none; color: #000;"
+              href="{% url 'Annonces_update_views' x.name %}"><i class="bi bi-upload"></i> </button></td>
+
+        <td><button class="center" style="width: 90px;"><a style="text-decoration: none; color: #000;"
+              href="{% url 'Annonce_delete' x.name %}"><i class="bi bi-trash3-fill"></i> </button></td>
+
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+
+  </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block title %}
+<title>home</title>
+<link rel="stylesheet" href="{% static '/css/EncadrementDesLicenceUpdate.css' %}">
+<link rel="stylesheet" href="{% static '/css/Low-Poly-Background.css' %}">
+<script src="{% static '/js/Low-Poly-Background.js' %}"></script>
+
+{% endblock %}
+
+
+
+{% block userinfo %}
+<div id="bg"></div>
+<br><br>
+
+<div class="content">
+  <button><a href="{% url 'Licence_upload_views'%}">add Etudiants</a></button>
+
+
+  <table class="table  ">
+    <thead style="color: aliceblue; background-color: #222A38;  height: 60px;">
+      <tr>
+        <th class="centerTxt"> Sujet de PFE de la Licence</th>
+        <th class="centerTxt">Etudiants concernés</th>
+        <th class="centerTxt">Filière date</th>
+        <th class="centerTxt">Delete</th>
+      </tr>
+    </thead>
+
+    <tbody style=" color: #222A38; background-color: whitesmoke; ">
+
+      {% for x in Licence %}
+      <tr >
+
+        <td class="centerTxt">{{x.SujetsDesPFE}}<a href="#"></a></td>
+        <td class="centerTxt"> {{x.EtudiantsConcernes}}</td>
+       <td class="centerTxt">{{x.Filiere}}</td>
+
+        <td><button class="center" style="width: 90px;"><a style="text-decoration: none; color: #000;"
+              href="{% url 'Licence_delete_views' x.id%}"><i class="bi bi-trash3-fill"></i> </button></td>
+
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+
+  </table>
+</div>
+
+
+
+
+
+{% endblock %}

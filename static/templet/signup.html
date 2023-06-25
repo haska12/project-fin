@@ -1,0 +1,62 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block title %}
+<title>login page</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static '/css/signup.css' %}">
+{% endblock %}
+
+
+
+{% block userinfo %}
+{% if messages %}
+                    
+              {% for message in messages %}
+              <div class="alert alert-danger alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Danger!</strong> {{ message }}
+              </div>
+               
+              {% endfor %}
+              
+              {% endif %}
+<div id="log">
+    <form method='POST' action="">
+        {% csrf_token %}
+		<div class="background">
+            <div class="shape"></div>
+            <div class="shape" ></div>
+            
+        </div>
+        <div id="login1"  >
+         
+            <h3 id="text " >Sign up</h3>
+   
+
+                   <label for="username"  id="text " >Username</label>        
+                    <input  type="text" name="username" placeholder="Username...">
+            
+                    <label for="password"  id="text ">email</label>
+                   <input type="email" name="email"  placeholder="email..." >
+
+                    <label for="username"  id="text " >Enter password</label>  
+                    <input type="password" name="password1" placeholder="Enter password" >
+
+                    <label for="username"  id="text " >Re-enter password</label>  
+                    <input type="password" name="password2"   placeholder="Re-enter password">
+
+            
+                  
+          
+           
+              <input id="button"  class="btn login_btn" type="submit" value="Sign up " style="color: #000000;">
+        
+             
+          
+        
+          </div>
+</div>
+{% endblock %}
+

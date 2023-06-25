@@ -1,0 +1,24 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block title %}
+<title>home</title>
+<link rel="stylesheet" href="{% static '/css/Annonce.css' %}">
+{% endblock %}
+
+
+
+{% block userinfo %}
+
+<main class="main_annonce">
+    <div class="Annonce_contente">
+        <h1 id="head">{{form.name}}</h1>
+    <h3 id="text">{{form.text}}</h3>
+   
+    <h3 id="link">  si vous voulez plus d'informations sur l'annonce, allez sur ce <a  target="_blank" href="{{form.link}}">lien</a></h3>
+    <h3 id="date">post date :{{form.postdate}}</h3>
+    </div>
+  
+</main>
+
+{% endblock %}

@@ -1,0 +1,18 @@
+:root{
+    --Low-Poly-Background-color1:#192839;
+    --Low-Poly-Background-color2:#1ab4e2;
+}
+
+
+
+#bg 
+{	
+	position:fixed;
+	background: cover;
+  background: linear-gradient(145deg, var(--Low-Poly-Background-color1)  50%, var(--Low-Poly-Background-color2) 115%);
+  width: auto;
+  height: auto;
+	margin: 0;
+  padding: 0;
+  z-index: -2;
+}

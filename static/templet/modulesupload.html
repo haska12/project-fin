@@ -1,0 +1,33 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block title %}
+<title>upload</title>
+<link rel="stylesheet" href="{% static '/css/modulesupload.css' %}">
+<link rel="stylesheet" href="{% static '/css/backg.css' %}">
+
+{% endblock %}
+
+
+
+{% block userinfo %}
+
+
+
+
+<div class="content">
+
+   <h1>upload</h1>
+
+    <form method='POST' enctype="multipart/form-data" >
+      {% csrf_token %}
+       <h4>module name : </h4>
+        <input type="text" name="modulenom" placeholder="modulenom..." style="color: black;" value="{{ form.modulenom.value }}" >
+        <button type="submit">Upload</button>
+      </form>
+  
+
+</div>
+ 
+<script src="{% static '/js/backg.js' %}"></script>
+
+{% endblock %}

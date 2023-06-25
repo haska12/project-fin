@@ -1,0 +1,85 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+:root{
+    --windocolor:rgba(255,255,255,0.13);
+}
+
+
+
+.content{
+   
+      
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll
+}
+.centerTxt{
+  text-align: center;
+}
+.center{
+  margin-top: 10px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+td button{
+    border: #000 solid 1px;
+    border-radius:40px;
+}
+.content button{
+  background-color: blue;
+  padding: 0;
+ 
+  border: #000 solid 1px;
+}
+.content button a{
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}
+
+    
+    .content{
+      margin-top: 300px;
+  height:400px;
+  width: 60%;
+  display: grid;
+grid-template-columns: auto;
+grid-template-rows: 40px auto ;
+background-color: white;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  font-family: "Oxygen", sans-serif;
+  
+}
+
+  a{
+    text-decoration: none;
+  }
+/*sccroll*/
+  /* Works on Firefox */
+* {
+scrollbar-width: thin;
+scrollbar-color: blue orange;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+background: orange;
+}
+
+*::-webkit-scrollbar-thumb {
+background-color: blue;
+border-radius: 20px;
+border: 3px solid orange;
+}
+    

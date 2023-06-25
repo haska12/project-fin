@@ -1,0 +1,42 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block title %}
+<title>home</title>
+<link rel="stylesheet" href="{% static '/css/EncadrementDesMAasterModelsDdesplaye.css' %}">
+
+<link rel="stylesheet" href="{% static '/css/Blurred_animated.css' %}">
+
+  {% endblock %}
+
+
+
+{% block userinfo %}
+<br>
+<br>
+<br>
+<div class="content " >
+  
+  <table class="table  ">
+    <thead >
+      <tr>
+        <th scope="col"> name</th>
+        <th scope="col">Sujets des PFE Master Big Data et Clouad Computing </th>
+        <th scope="col">Annee </th>
+
+      </tr>
+    </thead>
+    <tbody >
+      {% for x in MAaster %}
+
+      <tr>
+        <td scope="row"><a href="#">{{x.name}}</a></td>
+        <td> {{x.SujetsDesPFE}}</td>
+        <td>{{x.AnneeInscription}}</td>
+
+      </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

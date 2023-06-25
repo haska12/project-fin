@@ -1,0 +1,18 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+
+
+{% endblock %}
+
+
+
+{% block userinfo %}
+
+<form method='POST' action="{% url 'Series_delete' Serie.id%}">
+{% csrf_token %}
+
+<a href="{% url 'home' %}">cancel</a>
+<input type="submit" value="comfirm">
+</form>
+{% endblock %}

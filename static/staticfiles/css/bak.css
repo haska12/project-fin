@@ -1,0 +1,106 @@
+:root{
+   
+
+
+  --color1-bak-animated:#006624 ;
+  --color2-bak-animated:#097a73 ;
+  --color3-bak-animated:#0e5158;
+  --color4-bak-animated:#07145e ;
+
+  --color5-bak-animated:#81142a ;
+  --color6-bak-animated:#b82812;
+  --color7-bak-animated:#065823 ;
+}
+
+
+body {
+    -webkit-animation: theme 21s linear infinite;
+            animation: theme 21s linear infinite;
+  }
+  body:after, body:before {
+    content: "";
+    display: block;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    width: 100vmax;
+    height: 100vmax;
+    background: rgba(0, 0, 0, 0.05);
+    -webkit-animation: background 90s linear infinite;
+            animation: background 90s linear infinite;
+  }
+  body:after {
+    left: 15vw;
+  }
+  body:before {
+    right: 15vw;
+    -webkit-animation-delay: -30s;
+            animation-delay: -30s;
+    animation-direction: reverse;
+  }
+  
+  @-webkit-keyframes theme {
+    0% {
+      background: var(--color1-bak-animated);
+    }
+    16% {
+      background: var(--color2-bak-animated);
+    }
+    33% {
+      background: var(--color3-bak-animated);
+    }
+    50% {
+      background: var(--color4-bak-animated);
+    }
+    66% {
+      background: var(--color5-bak-animated);
+    }
+    83% {
+      background:var(--color6-bak-animated) ;
+    }
+    100% {
+      background: var(--color7-bak-animated);
+    }
+  }
+  
+  @keyframes theme {
+    0% {
+      background: var(--color1-bak-animated);
+    }
+    16% {
+      background: var(--color2-bak-animated);
+    }
+    33% {
+      background: var(--color3-bak-animated);
+    }
+    50% {
+      background: var(--color4-bak-animated);
+    }
+    66% {
+      background: var(--color5-bak-animated);
+    }
+    83% {
+      background:var(--color6-bak-animated) ;
+    }
+    100% {
+      background: var(--color7-bak-animated);
+    }
+  }
+  @-webkit-keyframes background {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes background {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

@@ -1,0 +1,64 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block title %}
+<title>Upload</title>
+<link rel="stylesheet" href="{% static '/css/SeriesUpdate.css' %}">
+<link rel="stylesheet" href="{% static '/css/Sliding_Diagonals.css' %}">
+
+
+{% endblock %}
+
+
+
+{% block userinfo %}
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+
+
+<div class="content">
+  <button><a href="{% url 'SeriesUpload'   %}">New Series</a></button>
+ 
+
+   <table class="table  ">
+     <thead style="color: aliceblue; background-color: #222A38;  ">
+      <tr>
+        <th class="centerTxt"> module mame</th>
+        <th class="centerTxt">Update</th>
+        <th class="centerTxt">Delete</th>
+      </tr>
+     </thead>
+ 
+     <tbody style=" color: #222A38; background-color: whitesmoke; ">
+      
+      {% for x in mambre %}
+      <tr>
+
+        <td class="centerTxt"><a     style="text-decoration: none; color: black;"
+            href="{% url 'Seriesdisplay'  x.id %} ">{{ x.name }} </a></td>
+        <td><button class="center"  style="width: 90px;"><a style="text-decoration: none; color: #000;"
+              href="{% url 'Serie_Update' x.id%}"><i class="bi bi-upload"></i> </button></td>
+
+        <td><button class="center" style="width: 90px;"><a style="text-decoration: none; color: #000;"
+              href="{% url 'Series_delete' x.id %}"><i class="bi bi-trash3-fill"></i>  </button></td>
+
+      </tr>
+      {% endfor %}
+      
+     </tbody>
+   </table>
+ 
+   </table>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <p><a href="{% url 'home' %}">Return to home</a></p>-->
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block title %}
+<title>cours</title>
+<link rel="stylesheet" href="{% static '/css/AnnoncesUplode.css' %}">
+<link rel="stylesheet" href="{% static '/css/backg.css' %}">
+
+{% endblock %}
+
+
+
+{% block userinfo %}
+<div class="centent">
+  <form method="post" enctype="multipart/form-data">
+    <h1 class="textcenter">upoad</h1>
+    {% csrf_token %}
+   
+    <label for="Sujet" id="Sujet">Sujet</label>
+    <label for="name">name</label>
+    <textarea name="text" id="text" cols="30" rows="10" placeholder="text..." >{{ form.name.value }}</textarea>
+    
+    <input type="text " id="name" name="name" placeholder="name..." value="{{ form.name.value }}">
+    <label for="link">link</label>
+    <input type="link " id="link" name="link" placeholder="link..." value="{{ form.link.value }}">
+  
+    <button type="submit">Upload</button>
+  </form>
+</div>
+
+<script src="{% static '/js/backg.js' %}"></script>
+
+{% endblock %}
+
+<!-- -->

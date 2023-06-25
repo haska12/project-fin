@@ -1,0 +1,73 @@
+
+
+:root{
+  --tbodyBackground-color:whitesmoke;
+  --theadBackground-color:#222A38;
+  --contentBackground-color:white;
+}
+
+
+
+
+
+
+tbody{
+  color: #222A38; 
+  background-color: var(--tbodyBackground-color); 
+}
+thead{
+ color: aliceblue; background-color: var(--theadBackground-color);
+}
+
+.content{
+   
+      
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll
+}
+
+
+      
+      .content{
+       margin-top: 200px ;
+    height:400px;
+    width: 60%;
+  background-color: var(--contentBackground-color);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    font-family: "Oxygen", sans-serif;
+ 
+    
+}
+
+    a{
+      text-decoration: none;
+    }
+/*sccroll*/
+    /* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: blue orange;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: orange;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: blue;
+  border-radius: 20px;
+  border: 3px solid orange;
+}
+      

@@ -1,0 +1,44 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block title %}
+<title>Encadrement Des Licence </title>
+<link rel="stylesheet" href="{% static '/css/EncadrementDesLicenceDesplaye.css' %}">
+
+<link rel="stylesheet" href="{% static '/css/backg.css' %}">
+
+
+
+{% endblock %}
+
+
+
+{% block userinfo %}
+<br><br>
+<br><br> <br>
+<div class="content">
+
+  <table class="table  ">
+    <thead style="color: aliceblue; background-color: #222A38;">
+      <tr>
+        <th scope="col"> Sujet de PFE de la Licence</th>
+        <th scope="col">Etudiants concernés </th>
+        <th scope="col">Filière</th>
+
+      </tr>
+    </thead>
+
+    <tbody style=" color: #222A38; background-color: whitesmoke; ">
+      {% for x in Licence %}
+      <tr>
+        <td scope="row"><a href="#">{{x.SujetsDesPFE}}</a></td>
+
+        <td> {{x.EtudiantsConcernes}}</td>
+        <td>{{x.Filiere}}</td>
+
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<script src="{% static '/js/backg.js' %}"></script>
+{% endblock %}

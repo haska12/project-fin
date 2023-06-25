@@ -1,0 +1,112 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+body {
+  background-color: black;
+  color: #cdf0f5;
+}
+
+.cantente {
+  margin-top: 300px;
+  height: 450px;
+  width: 900px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
+  display: grid;
+  grid-template-columns: 400px auto;
+  padding: 14px;
+}
+
+.cantente .info {
+  background-color: #283655;
+  padding-top: 90px;
+}
+
+.cantente .info .contente-info {
+  padding-top: 10px;
+  padding-left: 40px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.cantente .info .gid {
+  display: grid;
+  grid-template-columns: 60px auto;
+  padding-left: 14px;
+}
+
+.cantente .form-contacte {
+  background-color: #D0E1F9;
+}
+
+.cantente .form-contacte #head-info {
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #000;
+  font-size: 31px;
+  font-weight: bolder;
+}
+
+.cantente .form-contacte #contacte1 {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 40px 40px 40px 80px;
+  gap: 10px;
+  padding: 14px;
+}
+
+.cantente .form-contacte #FirstName {
+  grid-row: span 1;
+  grid-column: span 1;
+}
+
+.cantente .form-contacte #LasteName {
+  grid-row: span 1;
+  grid-column: span 1;
+}
+
+.cantente .form-contacte #email {
+  grid-row: span 1;
+  grid-column: span 2;
+}
+
+.cantente .form-contacte #subgicte {
+  grid-row: span 1;
+  grid-column: span 2;
+}
+
+.cantente .form-contacte #messge {
+  grid-row: span 1;
+  grid-column: span 2;
+}
+
+.cantente .form-contacte #button {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  margin-top: 50px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cantente .form-contacte #button:hover {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+@media screen and (max-width: 1000px) {
+  .cantente {
+    margin-top: 300px;
+  }
+}
+
+/*# sourceMappingURL=about.css.map */

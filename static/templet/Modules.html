@@ -1,0 +1,48 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block title %}
+<title>Modules</title>
+<link rel="stylesheet" href="{% static '/css/Modules.css' %}">
+<link rel="stylesheet" href="{% static '/css/Canva-moving-background.css' %}">
+
+{% endblock %}
+
+
+
+{% block userinfo %}
+<br><br><br>
+
+<div class="content">
+  <button><a href="{% url 'Modules_upload' %}"> module</a></button>
+
+  <table class="table  ">
+    <thead style="color: aliceblue; background-color: #222A38;  ">
+      <tr>
+        <th class="centerTxt"> module mame</th>
+        <th class="centerTxt">Update</th>
+        <th class="centerTxt">Delete</th>
+      </tr>
+    </thead>
+
+    <tbody style=" color: #222A38; background-color: whitesmoke; ">
+
+      {% for x in modules %}
+      <tr>
+
+        <td class="centerTxt"><a style="text-decoration: none; color: black;"
+            href="{% url 'Modules_despay_views' x.modulenom  %}">{{ x.modulenom }} </a></td>
+        <td><button class="center" style="width: 90px;"><a style="text-decoration: none; color: #000;"
+              href="{% url 'Modules_update_views' x.modulenom %}"><i class="bi bi-upload"></i> </button></td>
+
+        <td><button class="center" style="width: 90px;"><a style="text-decoration: none; color: #000;"
+              href="{% url 'Modules_delete_views' x.modulenom %}"><i class="bi bi-trash3-fill"></i> </button></td>
+
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+
+  </table>
+</div>
+{% endblock %}

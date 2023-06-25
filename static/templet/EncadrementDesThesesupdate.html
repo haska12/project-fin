@@ -1,0 +1,54 @@
+{% extends 'navbar.html' %}
+{% load static %}
+{% block title %}
+<title>home</title>
+<link rel="stylesheet" href="{% static '/css/Modules.css' %}">
+<link rel="stylesheet" href="{% static '/css/Low-Poly-Background.css' %}">
+<script src="{% static '/js/Low-Poly-Background.js' %}"></script>
+{% endblock %}
+
+
+
+{% block userinfo %}
+<div id="bg"></div>
+<br><br>
+
+<div class="content">
+  <button><a href="{% url 'These_uplod_views' %}">add Doctorant</a></button>
+
+
+  <table class="table  ">
+    <thead style="color: aliceblue; background-color: #222A38;  ">
+      <tr>
+        <th class="centerTxt"> Doctorant</th>
+        <th class="centerTxt">Sujet de thèse  </th>
+        <th class="centerTxt">année  d’inscription</th>
+        <th class="centerTxt">delite</th>
+      </tr>
+    </thead>
+
+    <tbody style=" color: #222A38; background-color: whitesmoke; ">
+
+      {% for x in Theses %}
+      <tr>
+
+        <td class="centerTxt">{{x.Doctorant}}</td>
+        <td class="centerTxt"> {{x.Sujet}}</td>
+        <td class="centerTxt">{{x.AnneeInscription}}</td>
+        <td><button class="center" style="width: 90px;"><a style="text-decoration: none; color: #000;"
+          href="{%url 'These_delete_views' x.id%}"><i class="bi bi-trash3-fill"></i> </button></td>
+        
+
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+
+  </table>
+</div>
+
+
+
+
+{% endblock %}
