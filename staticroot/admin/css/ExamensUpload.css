@@ -1,0 +1,65 @@
+:root{
+    --btn-background-color: rgb(29, 221, 189);
+    --btn-color: black;
+    --windocolor:rgba(255, 255, 255, 0.13);
+    --textbtncolor:rgb(29, 221, 189);
+}
+.centent{
+    margin-top: 300px;
+    height: 530px;
+    width: 400px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--windocolor);
+    border-radius: 10px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    padding: 50px 35px;
+    display: grid;
+    grid-template-columns:  auto;
+    grid-template-rows: 60px auto;
+    padding: 14px;
+    color: rgb(29, 221, 189);
+}
+.centent form {
+    display: grid;
+    grid-template-columns:  auto;
+    
+    padding: 14px ;
+}
+.centent form input,.centent form select{
+    color: #000;
+    height: 40px;
+}
+.centent form label{
+   
+    font-size: large;
+}
+.centent form *{
+    margin-top: 10x;
+    margin-bottom: 10px;
+}
+.textcenter{
+    text-align: center;
+}
+ button {
+    height: 40px;
+    width: 200px;
+    color: var(--btn-background-color);
+    background-color: var(--btn-color);
+    border: var(--btn-background-color) 2px  solid;
+    border-radius: 4px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+font-weight: bold;
+}
+ button:hover{
+    color:var(--btn-color) ;
+    background-color: var(--btn-background-color);
+}
