@@ -103,4 +103,3 @@ path('MAaster_update/',MAaster_update_page,name="MAaster_update_page"),
 path('MAaster_upload/',MAaster_upload_views,name="MAaster_upload_views"),
 path('MAaster_delete/<str:pk>/',MAaster_delete_views,name="MAaster_delete_views"),
 ]
-urlpatterns+=staticfiles_urlpatterns()
