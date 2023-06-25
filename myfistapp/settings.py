@@ -152,6 +152,7 @@ STATIC_URL = '/static/'
 
 STATIC_ROOT=os.path.join(BASE_DIR,"/static/")#correct
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 #Add this in your settings.py file:
