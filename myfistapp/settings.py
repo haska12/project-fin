@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-gnvp^m6=7&#b^5j%s7oia_0c!r%r0-p@)g3sbm%@#_jfap_7q9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -52,8 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+  
     
 ]
 
@@ -102,6 +101,13 @@ environ.Env.read_env()
 DATABASES = {
    'default': dj_database_url.parse(env('DATABASE_URL'))
 }
+"""
+DATABASES = {
+   'default': dj_database_url.parse(env('DATABASE_URL2'))
+}
+DATABASE_URL2=postgresql://postgres:WguPhqRN3S83DkvQbuSz@containers-us-west-197.railway.app:7584/railway
+
+"""
 
 
 # Password validation

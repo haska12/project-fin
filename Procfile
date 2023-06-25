@@ -1,1 +1,0 @@
-web: gunicorn myfistapp.wsgi --log-file -
