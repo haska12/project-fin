@@ -28,12 +28,14 @@ except:
     except:
         print("erour")
    
-
+import environ
+env= environ.Env()
+environ.Env.read_env()
 try:
   user=User.objects.get(username='said')
 except:
     try:
-        user =User.objects.create(username='said', email='saidtkatek@gmail.com',first_name='said',last_name='tkatek',password='na_rnSw3*^zQPs-',is_staff=True,is_superuser=True)
+        user =User.objects.create(username='said', email='saidtkatek@gmail.com',first_name='said',last_name='tkatek',password=env('password'),is_staff=True,is_superuser=True)
     except:
         print("errur")
 try:
