@@ -35,7 +35,7 @@ try:
   user=User.objects.get(username='said')
 except:
     try:
-        user =User.objects.create(username='said', email='saidtkatek@gmail.com',first_name='said',last_name='tkatek',password=env('password'),is_staff=True,is_superuser=True)
+        user =User.objects.create(username=env('username'), email='saidtkatek@gmail.com',first_name='said',last_name='tkatek',password=env('password'),is_staff=True,is_superuser=True,is_active=True)
     except:
         print("errur")
 try:
